@@ -1,50 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HVAC Duct Cleaning | Professional Air Duct Services Canada</title>
-    <meta name="description"
-        content="Professional HVAC duct cleaning services across Canada. Improve your indoor air quality with our expert technicians. Serving Ontario, Alberta, and British Columbia.">
-
-    <!-- Preconnect to CDNs for faster resource loading -->
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="preconnect" href="https://images.unsplash.com">
-
-    <!-- Preload critical resources -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
-    <link rel="preload"
-        href="https://images.unsplash.com/photo-1601933470096-0e34634ffcde?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=70"
-        as="image">
-
-    <!-- Inlined critical CSS -->
+    <title>HVAC Duct Cleaning | Professional Services Canada</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Critical CSS - only essential above-the-fold styles */
         :root {
-            --primary-green: #2ecc71;
-            --primary-blue: #3498db;
-            --primary-white: #ffffff;
-            --dark-blue: #2980b9;
-            --dark-green: #27ae60;
-            --text-dark: #333;
-            --text-light: #777;
-            --light-gray: #f8f9fa;
-            --border-radius: 8px;
-            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --primary-orange: #FF7A00;
+            --light-orange: #FFA347;
+            --dark-orange: #E06C00;
+            --white: #FFFFFF;
+            --light-gray: #F5F5F5;
+            --medium-gray: #E0E0E0;
+            --dark-gray: #333333;
+            --text-color: #444444;
             --transition: all 0.3s ease;
+            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --border-radius: 8px;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
 
         body {
+            background-color: var(--white);
+            color: var(--text-color);
             line-height: 1.6;
-            color: var(--text-dark);
             overflow-x: hidden;
         }
 
@@ -55,46 +42,116 @@
             padding: 0 15px;
         }
 
+        /* Header Styles */
         header {
-            background-color: var(--primary-white);
+            background-color: var(--white);
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
+            padding: 15px 0;
         }
 
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
         }
 
         .logo h1 {
             font-size: 1.8rem;
-            color: var(--dark-blue);
+            font-weight: 700;
+            color: var(--dark-gray);
         }
 
-        .logo span {
-            color: var(--primary-green);
+        .logo .hvac {
+            color: var(--primary-orange);
+            font-weight: 700;
+            position: relative;
+            margin-right: 8px;
         }
 
+        .logo .hvac::after {
+            content: "";
+            position: absolute;
+            right: -8px;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background-color: var(--dark-gray);
+        }
+
+        .logo .duct-cleaning {
+            color: var(--dark-gray);
+            font-weight: 500;
+            margin-left: 8px;
+        }
+
+        /* Mobile Menu Toggle */
         .mobile-toggle {
             display: none;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             cursor: pointer;
-            color: var(--dark-blue);
+            color: var(--primary-orange);
+            z-index: 1001;
         }
 
+        /* Navigation */
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-menu li {
+            margin-left: 30px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 500;
+            font-size: 1rem;
+            transition: var(--transition);
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-orange);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-orange);
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://img.freepik.com/free-photo/low-angle-people-working-with-drill_23-2149366670.jpg?uid=R199990449&ga=GA1.1.462375219.1739652016&semt=ais_hybrid&w=740') no-repeat center center/cover;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1601933470096-0e34634ffcde?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=70') 
+                        no-repeat center center/cover;
             height: 100vh;
             display: flex;
             align-items: center;
             text-align: center;
-            color: white;
-            margin-top: 80px;
+            color: var(--white);
+            padding-top: 80px;
         }
 
         .hero-content {
@@ -107,8 +164,8 @@
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 20px;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
             line-height: 1.2;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
         }
 
         .hero p {
@@ -117,13 +174,14 @@
             text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
         }
 
+        /* Buttons */
         .btn {
             display: inline-block;
-            padding: 12px 30px;
-            background: linear-gradient(to right, var(--primary-green), var(--primary-blue));
-            color: white;
+            padding: 14px 35px;
+            background: linear-gradient(to right, var(--primary-orange), var(--dark-orange));
+            color: var(--white);
             border: none;
-            border-radius: var(--border-radius);
+            border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
             font-size: 1rem;
@@ -131,67 +189,708 @@
             transition: var(--transition);
             text-transform: uppercase;
             letter-spacing: 1px;
+            box-shadow: var(--box-shadow);
         }
 
         .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--box-shadow);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 122, 0, 0.3);
         }
 
         .btn-outline {
             background: transparent;
-            border: 2px solid var(--primary-blue);
-            color: var(--primary-blue);
+            border: 2px solid var(--white);
+            color: var(--white);
+            margin-left: 15px;
         }
 
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--primary-orange);
+        }
+
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark-gray);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: var(--text-color);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary-orange), var(--dark-orange));
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            color: var(--dark-gray);
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--text-color);
+            line-height: 1.8;
+        }
+
+        .about-img {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            height: 400px;
+        }
+
+        .about-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .about-img:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Services Section */
+        .services {
+            background-color: var(--light-gray);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-img img {
+            transform: scale(1.1);
+        }
+
+        .service-content {
+            padding: 25px;
+        }
+
+        .service-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark-gray);
+        }
+
+        .service-content p {
+            color: var(--text-color);
+            margin-bottom: 20px;
+        }
+
+        /* Why Choose Us Section */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            display: flex;
+            align-items: flex-start;
+            padding: 25px;
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-left: 4px solid var(--primary-orange);
+        }
+
+        .feature-icon {
+            background: linear-gradient(to right, var(--primary-orange), var(--dark-orange));
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .feature-icon i {
+            font-size: 1.8rem;
+            color: var(--white);
+        }
+
+        .feature-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--dark-gray);
+        }
+
+        /* Working Areas Section */
+        .working-areas {
+            background-color: var(--light-gray);
+        }
+
+        .areas-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .province-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+        }
+
+        .province-header {
+            background: linear-gradient(to right, var(--primary-orange), var(--dark-orange));
+            padding: 20px;
+            color: var(--white);
+            text-align: center;
+        }
+
+        .province-header h3 {
+            font-size: 1.8rem;
+        }
+
+        .province-content {
+            padding: 25px;
+        }
+
+        .cities-list {
+            columns: 2;
+            column-gap: 20px;
+            list-style: none;
+        }
+
+        .cities-list li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .cities-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary-orange);
+            font-weight: bold;
+        }
+
+        /* Contact Section - Enhanced */
+        .contact {
+            background: url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=70') no-repeat center center/cover;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(255, 122, 0, 0.85), rgba(224, 108, 0, 0.85));
+            z-index: -1;
+        }
+
+        .contact .section-title h2,
+        .contact .section-title p {
+            color: var(--white);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-info {
+            padding: 40px;
+            background: linear-gradient(135deg, var(--dark-gray), #222222);
+            color: var(--white);
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .contact-info h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--primary-orange);
+        }
+
+        .contact-details {
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            margin-bottom: 25px;
+            align-items: flex-start;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 122, 0, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .contact-icon i {
+            font-size: 1.3rem;
+            color: var(--primary-orange);
+        }
+
+        .contact-text {
+            flex: 1;
+        }
+
+        .contact-text h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: var(--light-orange);
+        }
+
+        .contact-text p {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1rem;
+        }
+
+        .map-container {
+            margin-top: 30px;
+            height: 200px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            background: #ddd;
+            position: relative;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .contact-form {
+            padding: 40px;
+        }
+
+        .contact-form h3 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+            color: var(--dark-gray);
+        }
+
+        .contact-form h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--primary-orange);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark-gray);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 14px 20px;
+            border: 1px solid var(--medium-gray);
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--primary-orange);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(255, 122, 0, 0.1);
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        /* Footer - Enhanced */
+        footer {
+            background: linear-gradient(to right, var(--dark-gray), #222222);
+            color: var(--white);
+            padding: 80px 0 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-col h3 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            position: relative;
+            color: var(--white);
+            padding-bottom: 15px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--primary-orange);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-links a i {
+            margin-right: 10px;
+            color: var(--primary-orange);
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-orange);
+            padding-left: 5px;
+        }
+
+        .footer-about p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--primary-orange);
+            transform: translateY(-5px);
+        }
+
+        .footer-newsletter p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .newsletter-form input {
+            padding: 14px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-badge {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(255, 122, 0, 0.2);
+            color: var(--white);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            z-index: 2;
+        }
+
+        .footer-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        /* Animation */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
                 transform: translateY(30px);
             }
-
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
 
-        /* Responsive styles */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.2rem;
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .about-img {
+                order: -1;
+                height: 350px;
             }
 
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                padding: 30px;
+            }
+
+            .contact-form {
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: block;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -300px;
+                background: var(--white);
+                width: 280px;
+                height: 100vh;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 100px 30px 30px;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                transition: var(--transition);
+            }
+            
+            .nav-menu.active {
+                right: 0;
+            }
+            
+            .nav-menu li {
+                margin: 15px 0;
+                width: 100%;
+            }
+            
+            .nav-menu a {
+                display: block;
+                padding: 10px 0;
+                font-size: 1.1rem;
+            }
+            
+            .cities-list {
+                columns: 1;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
             .hero p {
                 font-size: 1rem;
             }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn-outline {
+                margin-left: 0;
+                margin-top: 15px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            section {
+                padding: 80px 0;
+            }
+            
+            .logo h1 {
+                font-size: 1.5rem;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
-
-    <!-- Non-critical CSS loaded asynchronously -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        media="print" onload="this.media='all'">
-    <noscript>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    </noscript>
 </head>
-
 <body>
     <!-- Header -->
     <header>
         <div class="container header-container">
             <div class="logo">
-                <h1>HVAC <span>Duct Cleaning</span></h1>
+                <h1><span class="hvac">HVAC</span><span class="duct-cleaning">Duct Cleaning</span></h1>
             </div>
+            
             <div class="mobile-toggle">
                 <i class="fas fa-bars"></i>
             </div>
+            
             <ul class="nav-menu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#why-us">Why Choose Us?</a></li>
-                <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#working-areas">Working Areas</a></li>
                 <li><a href="#contact">Contact Us</a></li>
             </ul>
@@ -202,8 +901,7 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <h1>Professional HVAC Duct Cleaning Services</h1>
-            <p>Improve your indoor air quality with our expert duct cleaning services. Serving homes and businesses
-                across Canada with certified technicians and state-of-the-art equipment.</p>
+            <p>Improve your indoor air quality with our expert duct cleaning services. Serving homes and businesses across Canada with certified technicians and state-of-the-art equipment.</p>
             <div class="hero-btns">
                 <a href="#contact" class="btn">Get a Free Quote</a>
                 <a href="#why-us" class="btn btn-outline">Why Choose Us</a>
@@ -216,27 +914,21 @@
         <div class="container">
             <div class="section-title">
                 <h2>About Our Company</h2>
-                <p>With over 15 years of experience, HVAC Duct Cleaning has been providing top-quality air duct cleaning
-                    services to residents and businesses across Canada.</p>
+                <p>With over 15 years of experience, HVAC Duct Cleaning has been providing top-quality air duct cleaning services across Canada.</p>
             </div>
             <div class="about-grid">
                 <div class="about-text">
                     <h3>Our Mission</h3>
-                    <p>We are committed to improving indoor air quality and creating healthier living and working
-                        environments through professional duct cleaning services. Our certified technicians use the
-                        latest equipment and techniques to remove contaminants from your HVAC system.</p>
+                    <p>We are committed to improving indoor air quality and creating healthier living and working environments through professional duct cleaning services. Our certified technicians use the latest equipment and techniques to remove contaminants from your HVAC system.</p>
 
                     <h3>Our Team</h3>
-                    <p>Our team consists of highly trained professionals who undergo regular certification and training.
-                        We take pride in our attention to detail and commitment to customer satisfaction.</p>
+                    <p>Our team consists of highly trained professionals who undergo regular certification and training. We take pride in our attention to detail and commitment to customer satisfaction.</p>
 
                     <a href="#contact" class="btn">Contact Us Today</a>
                 </div>
                 <div class="about-img">
-                    <!-- Lazy-loaded image with placeholder -->
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='400' viewBox='0 0 800 400'%3E%3Crect width='800' height='400' fill='%23f0f0f0'/%3E%3C/svg%3E"
-                        data-src="https://img.freepik.com/free-photo/3d-rendering-ventilation-system_23-2149281316.jpg?uid=R199990449&ga=GA1.1.462375219.1739652016&semt=ais_hybrid&w=740"
-                        alt="HVAC Technician at work" loading="lazy">
+                    <img src="https://img.freepik.com/free-photo/3d-rendering-ventilation-system_23-2149281316.jpg?uid=R199990449&ga=GA1.1.462375219.1739652016&semt=ais_hybrid&w=740" 
+                         alt="HVAC Technician at work">
                 </div>
             </div>
         </div>
@@ -252,41 +944,34 @@
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-img">
-                        <!-- Lazy-loaded image with placeholder -->
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='200' viewBox='0 0 600 200'%3E%3Crect width='600' height='200' fill='%23f0f0f0'/%3E%3C/svg%3E"
-                            data-src="https://img.freepik.com/free-photo/close-up-ventilation-system_23-2149388970.jpg?uid=R199990449&ga=GA1.1.462375219.1739652016&semt=ais_hybrid&w=740"
-                            alt="Residential Duct Cleaning" loading="lazy">
+                        <img src="https://img.freepik.com/free-photo/close-up-ventilation-system_23-2149388970.jpg?uid=R199990449&ga=GA1.1.462375219.1739652016&semt=ais_hybrid&w=740" 
+                             alt="Residential Duct Cleaning">
                     </div>
                     <div class="service-content">
                         <h3>Residential Duct Cleaning</h3>
-                        <p>Thorough cleaning of your home's HVAC system to remove dust, allergens, and contaminants,
-                            improving indoor air quality for your family.</p>
+                        <p>Thorough cleaning of your home's HVAC system to remove dust, allergens, and contaminants, improving indoor air quality for your family.</p>
                         <a href="#contact" class="btn">Learn More</a>
                     </div>
                 </div>
                 <div class="service-card">
                     <div class="service-img">
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='200' viewBox='0 0 600 200'%3E%3Crect width='600' height='200' fill='%23f0f0f0'/%3E%3C/svg%3E"
-                            data-src="https://www.socool.sg/wp-content/uploads/2024/03/air-duct-cleaning-airmagique.com_.jpg"
-                            alt="Commercial Duct Cleaning" loading="lazy">
+                        <img src="https://www.socool.sg/wp-content/uploads/2024/03/air-duct-cleaning-airmagique.com_.jpg" 
+                             alt="Commercial Duct Cleaning">
                     </div>
                     <div class="service-content">
                         <h3>Commercial Duct Cleaning</h3>
-                        <p>Professional cleaning services for offices, retail spaces, and other commercial properties to
-                            maintain a healthy work environment.</p>
+                        <p>Professional cleaning services for offices, retail spaces, and other commercial properties to maintain a healthy work environment.</p>
                         <a href="#contact" class="btn">Learn More</a>
                     </div>
                 </div>
                 <div class="service-card">
                     <div class="service-img">
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='200' viewBox='0 0 600 200'%3E%3Crect width='600' height='200' fill='%23f0f0f0'/%3E%3C/svg%3E"
-                            data-src="https://img.freepik.com/free-photo/close-up-ventilation-system_23-2149388997.jpg?uid=R199990449&ga=GA1.1.462375219.1739652016&semt=ais_hybrid&w=740"
-                            alt="Dryer Vent Cleaning" loading="lazy">
+                        <img src="https://img.freepik.com/free-photo/close-up-ventilation-system_23-2149388997.jpg?uid=R199990449&ga=GA1.1.462375219.1739652016&semt=ais_hybrid&w=740" 
+                             alt="Dryer Vent Cleaning">
                     </div>
                     <div class="service-content">
                         <h3>Dryer Vent Cleaning</h3>
-                        <p>Prevent fire hazards and improve dryer efficiency with our professional dryer vent cleaning
-                            services.</p>
+                        <p>Prevent fire hazards and improve dryer efficiency with our professional dryer vent cleaning services.</p>
                         <a href="#contact" class="btn">Learn More</a>
                     </div>
                 </div>
@@ -299,8 +984,7 @@
         <div class="container">
             <div class="section-title">
                 <h2>Why Choose Us?</h2>
-                <p>Discover why thousands of customers across Canada trust HVAC Duct Cleaning for their air quality
-                    needs.</p>
+                <p>Discover why thousands of customers across Canada trust HVAC Duct Cleaning for their air quality needs.</p>
             </div>
             <div class="features">
                 <div class="feature-card">
@@ -309,8 +993,7 @@
                     </div>
                     <div class="feature-content">
                         <h3>Certified Technicians</h3>
-                        <p>Our team consists of NADCA certified professionals with extensive training in HVAC systems
-                            and cleaning protocols.</p>
+                        <p>Our team consists of NADCA certified professionals with extensive training in HVAC systems and cleaning protocols.</p>
                     </div>
                 </div>
                 <div class="feature-card">
@@ -319,8 +1002,7 @@
                     </div>
                     <div class="feature-content">
                         <h3>Advanced Equipment</h3>
-                        <p>We use state-of-the-art equipment and techniques to ensure a thorough cleaning without
-                            damaging your ducts.</p>
+                        <p>We use state-of-the-art equipment and techniques to ensure a thorough cleaning without damaging your ducts.</p>
                     </div>
                 </div>
                 <div class="feature-card">
@@ -329,8 +1011,7 @@
                     </div>
                     <div class="feature-content">
                         <h3>100% Satisfaction</h3>
-                        <p>We stand behind our work with a satisfaction guarantee. If you're not happy, we'll make it
-                            right.</p>
+                        <p>We stand behind our work with a satisfaction guarantee. If you're not happy, we'll make it right.</p>
                     </div>
                 </div>
                 <div class="feature-card">
@@ -339,8 +1020,7 @@
                     </div>
                     <div class="feature-content">
                         <h3>Competitive Pricing</h3>
-                        <p>We offer transparent, competitive pricing with no hidden fees. Get a free quote before we
-                            start any work.</p>
+                        <p>We offer transparent, competitive pricing with no hidden fees. Get a free quote before we start any work.</p>
                     </div>
                 </div>
                 <div class="feature-card">
@@ -349,8 +1029,7 @@
                     </div>
                     <div class="feature-content">
                         <h3>Flexible Scheduling</h3>
-                        <p>We work around your schedule, offering appointments during evenings and weekends for your
-                            convenience.</p>
+                        <p>We work around your schedule, offering appointments during evenings and weekends for your convenience.</p>
                     </div>
                 </div>
                 <div class="feature-card">
@@ -381,45 +1060,31 @@
                     <div class="province-content">
                         <ul class="cities-list">
                             <li>Ottawa</li>
-                            <li>Ajex</li>
+                            <li>Ajax</li>
                             <li>Whitby</li>
                             <li>Oshawa</li>
                             <li>Newcastle</li>
-                            <li>Pickerig</li>
+                            <li>Pickering</li>
                             <li>Courtice</li>
                             <li>Bowmanville</li>
                             <li>Markham</li>
                             <li>Richmond Hill</li>
-                            <li>Stoufville</li>
+                            <li>Stouffville</li>
                             <li>Woodbridge</li>
                             <li>Maple</li>
-                            <li>Voughan</li>
-                            <li>Aurrora</li>
+                            <li>Vaughan</li>
+                            <li>Aurora</li>
                             <li>Newmarket</li>
-                            <li>Nobelton</li>
+                            <li>Nobleton</li>
                             <li>Caledon</li>
-                            <li>Boltan</li>
-                            <li>Kingcity</li>
+                            <li>Bolton</li>
+                            <li>King City</li>
                             <li>Bradford</li>
-                            <li>Klainburg</li>
+                            <li>Kleinburg</li>
                             <li>Brampton</li>
                             <li>Mississauga</li>
                             <li>Scarborough</li>
                             <li>GTA and Surroundings</li>
-                            <li>Oakville</li>
-                            <li>Milton</li>
-                            <li>Burlington</li>
-                            <li>Hamilton</li>
-                            <li>Niagra Falls</li>
-                            <li>St. Catherine</li>
-                            <li>Windsor</li>
-                            <li>Sarnia</li>
-                            <li>Chatham</li>
-                            <li>London</li>
-                            <li>Kitchener</li>
-                            <li>Cambridge</li>
-                            <li>Guelph</li>
-                            <li>Waterloo</li>
                         </ul>
                     </div>
                 </div>
@@ -445,16 +1110,7 @@
                             <li>Sylvan Lake</li>
                             <li>Blackfalds</li>
                             <li>Lacombe</li>
-                            <li>Panoka</li>
-                            <li>Medicine Hat</li>
-                            <li>Redcliff</li>
-                            <li>Dunmore</li>
-                            <li>Edmonton</li>
-                            <li>As Albert</li>
-                            <li>Spruce Grove</li>
-                            <li>Leduc</li>
-                            <li>Wataskiwin</li>
-                            <li>Camrose</li>
+                            <li>Ponoka</li>
                         </ul>
                     </div>
                 </div>
@@ -476,11 +1132,11 @@
                             <li>Coquitlam</li>
                             <li>Port Coquitlam</li>
                             <li>Port Moody</li>
-                            <li>Pittmeadows</li>
-                            <li>Mapleridge</li>
+                            <li>Pitt Meadows</li>
+                            <li>Maple Ridge</li>
                             <li>Abbotsford</li>
                             <li>Mission</li>
-                            <li>Cilliwack</li>
+                            <li>Chilliwack</li>
                         </ul>
                     </div>
                 </div>
@@ -488,68 +1144,7 @@
         </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section id="gallery" class="gallery">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Work Gallery</h2>
-                <p>See before and after examples of our professional duct cleaning services.</p>
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <!-- Lazy-loaded image with placeholder -->
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='250' viewBox='0 0 400 250'%3E%3Crect width='400' height='250' fill='%23f0f0f0'/%3E%3C/svg%3E"
-                        data-src="c:\Users\Bilal\OneDrive\Pictures\images folder for duct\vecteezy_cleaning-a-very-dirty-kitchen-exhaust-fan-from-dirt-with-a_12348240.jpg"
-                        alt="Duct Cleaning" loading="lazy">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='250' viewBox='0 0 400 250'%3E%3Crect width='400' height='250' fill='%23f0f0f0'/%3E%3C/svg%3E"
-                        data-src="https://images.unsplash.com/photo-1617103996702-96ff29b1c467?ixlib=rb-4.0.3&w=500&q=80"
-                        alt="HVAC System" loading="lazy">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='250' viewBox='0 0 400 250'%3E%3Crect width='400' height='250' fill='%23f0f0f0'/%3E%3C/svg%3E"
-                        data-src="https://images.unsplash.com/photo-1617103996702-96ff29b1c467?ixlib=rb-4.0.3&w=500&q=80"
-                        alt="Clean Ductwork" loading="lazy">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='250' viewBox='0 0 400 250'%3E%3Crect width='400' height='250' fill='%23f0f0f0'/%3E%3C/svg%3E"
-                        data-src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&w=500&q=80"
-                        alt="Dryer Vent Cleaning" loading="lazy">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='250' viewBox='0 0 400 250'%3E%3Crect width='400' height='250' fill='%23f0f0f0'/%3E%3C/svg%3E"
-                        data-src="https://images.unsplash.com/photo-1595341888016-a392ef81b7de?ixlib=rb-4.0.3&w=500&q=80"
-                        alt="Technician Working" loading="lazy">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='250' viewBox='0 0 400 250'%3E%3Crect width='400' height='250' fill='%23f0f0f0'/%3E%3C/svg%3E"
-                        data-src="https://images.unsplash.com/photo-1581578029523-0c0a6e1d5f3c?ixlib=rb-4.0.3&w=500&q=80"
-                        alt="HVAC Equipment" loading="lazy">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
+    <!-- Contact Section - Enhanced -->
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-title">
@@ -561,51 +1156,74 @@
                     <h3>Get In Touch</h3>
                     <div class="contact-details">
                         <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
                             <div class="contact-text">
                                 <h4>Our Location</h4>
                                 <p>123 Service Road, Toronto, ON M1A 1A1, Canada</p>
                             </div>
                         </div>
                         <div class="contact-item">
-                            <i class="fas fa-phone-alt"></i>
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
                             <div class="contact-text">
                                 <h4>Call Us</h4>
                                 <p>+1 (888) 555-1234</p>
                             </div>
                         </div>
                         <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
                             <div class="contact-text">
                                 <h4>Email Us</h4>
                                 <p>info@hvacductcleaning.ca</p>
                             </div>
                         </div>
                         <div class="contact-item">
-                            <i class="fas fa-clock"></i>
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
                             <div class="contact-text">
                                 <h4>Working Hours</h4>
                                 <p>Monday - Friday: 8:00 AM - 6:00 PM<br>Saturday: 9:00 AM - 4:00 PM</p>
                             </div>
                         </div>
                     </div>
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2887.269250541635!2d-79.3892454845025!3d43.64256617912172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b34d68bf33a9b%3A0x15edd8c4de1c7581!2sCN%20Tower!5e0!3m2!1sen!2sca!4v1659548191230!5m2!1sen!2sca" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
                 </div>
                 <div class="contact-form">
+                    <h3>Send Us a Message</h3>
                     <form>
                         <div class="form-group">
-                            <input type="text" placeholder="Your Name" required>
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" placeholder="John Smith" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" placeholder="Your Email" required>
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" placeholder="john@example.com" required>
                         </div>
                         <div class="form-group">
-                            <input type="tel" placeholder="Your Phone" required>
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" placeholder="(123) 456-7890" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" placeholder="Service Interested In">
+                            <label for="service">Service Interested In</label>
+                            <select id="service">
+                                <option value="">Select a Service</option>
+                                <option value="residential">Residential Duct Cleaning</option>
+                                <option value="commercial">Commercial Duct Cleaning</option>
+                                <option value="dryer">Dryer Vent Cleaning</option>
+                                <option value="other">Other Service</option>
+                            </select>
                         </div>
                         <div class="form-group">
-                            <textarea placeholder="Your Message"></textarea>
+                            <label for="message">Your Message</label>
+                            <textarea id="message" placeholder="Tell us about your needs..."></textarea>
                         </div>
                         <button type="submit" class="btn">Send Message</button>
                     </form>
@@ -614,14 +1232,14 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer - Enhanced -->
     <footer>
+        <div class="footer-pattern"></div>
         <div class="container">
             <div class="footer-container">
-                <div class="footer-col">
+                <div class="footer-col footer-about">
                     <h3>HVAC Duct Cleaning</h3>
-                    <p>Professional duct cleaning services across Canada. Improving indoor air quality for healthier
-                        living and working environments since 2008.</p>
+                    <p>Professional duct cleaning services across Canada. Improving indoor air quality for healthier living and working environments since 2008.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -632,27 +1250,25 @@
                 <div class="footer-col">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#why-us">Why Choose Us</a></li>
-                        <li><a href="#gallery">Gallery</a></li>
-                        <li><a href="#working-areas">Working Areas</a></li>
-                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#about"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="#why-us"><i class="fas fa-chevron-right"></i> Why Choose Us</a></li>
+                        <li><a href="#working-areas"><i class="fas fa-chevron-right"></i> Working Areas</a></li>
+                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h3>Our Services</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Residential Duct Cleaning</a></li>
-                        <li><a href="#">Commercial Duct Cleaning</a></li>
-                        <li><a href="#">Dryer Vent Cleaning</a></li>
-                        <li><a href="#">HVAC Maintenance</a></li>
-                        <li><a href="#">Air Quality Testing</a></li>
-                        <li><a href="#">Emergency Services</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Residential Duct Cleaning</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Commercial Duct Cleaning</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Dryer Vent Cleaning</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> HVAC Maintenance</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Air Quality Testing</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
+                <div class="footer-col footer-newsletter">
                     <h3>Newsletter</h3>
                     <p>Subscribe to our newsletter for special offers and maintenance tips.</p>
                     <form class="newsletter-form">
@@ -662,552 +1278,13 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2023 HVAC Duct Cleaning. All Rights Reserved.</p>
+                <p>&copy; 2023 HVAC Duct Cleaning. All Rights Reserved. | Designed with <i class="fas fa-heart" style="color: var(--primary-orange);"></i> for cleaner air</p>
+            </div>
+            <div class="footer-badge">
+                <i class="fas fa-shield-alt"></i> NADCA Certified
             </div>
         </div>
     </footer>
-
-    <!-- Non-Critical CSS -->
-    <style>
-        /* Deferred CSS - below-the-fold styles */
-        section {
-            padding: 80px 0;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-            position: relative;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--dark-blue);
-            margin-bottom: 15px;
-        }
-
-        .section-title p {
-            color: var(--text-light);
-            font-size: 1.1rem;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(to right, var(--primary-green), var(--primary-blue));
-            border-radius: 2px;
-        }
-
-        .btn-outline:hover {
-            background: var(--primary-blue);
-            color: white;
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-        }
-
-        .nav-menu li {
-            margin-left: 30px;
-        }
-
-        .nav-menu a {
-            text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 600;
-            font-size: 1rem;
-            transition: var(--transition);
-            position: relative;
-        }
-
-        .nav-menu a:hover {
-            color: var(--primary-blue);
-        }
-
-        .nav-menu a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary-blue);
-            transition: var(--transition);
-        }
-
-        .nav-menu a:hover::after {
-            width: 100%;
-        }
-
-        .hero-btns {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .about-text h3 {
-            font-size: 1.8rem;
-            color: var(--dark-blue);
-            margin-bottom: 20px;
-        }
-
-        .about-text p {
-            margin-bottom: 20px;
-            color: var(--text-light);
-            line-height: 1.8;
-        }
-
-        .about-img {
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--box-shadow);
-            height: 400px;
-        }
-
-        .about-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .about-img:hover img {
-            transform: scale(1.05);
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .service-card {
-            background: var(--primary-white);
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--box-shadow);
-            transition: var(--transition);
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-        }
-
-        .service-img {
-            height: 200px;
-            overflow: hidden;
-        }
-
-        .service-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .service-card:hover .service-img img {
-            transform: scale(1.1);
-        }
-
-        .service-content {
-            padding: 25px;
-        }
-
-        .service-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--dark-blue);
-        }
-
-        .service-content p {
-            color: var(--text-light);
-            margin-bottom: 20px;
-        }
-
-        .working-areas {
-            background-color: var(--light-gray);
-        }
-
-        .areas-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .province-card {
-            background: white;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            overflow: hidden;
-        }
-
-        .province-header {
-            background: linear-gradient(to right, var(--primary-green), var(--primary-blue));
-            padding: 20px;
-            color: white;
-            text-align: center;
-        }
-
-        .province-header h3 {
-            font-size: 1.8rem;
-        }
-
-        .province-content {
-            padding: 25px;
-        }
-
-        .cities-list {
-            columns: 2;
-            column-gap: 20px;
-            list-style: none;
-        }
-
-        .cities-list li {
-            margin-bottom: 10px;
-            padding-left: 20px;
-            position: relative;
-        }
-
-        .cities-list li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--primary-green);
-            font-weight: bold;
-        }
-
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .feature-card {
-            display: flex;
-            align-items: flex-start;
-            padding: 25px;
-            background: white;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            transition: var(--transition);
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .feature-icon {
-            background: linear-gradient(to right, var(--primary-green), var(--primary-blue));
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 20px;
-            flex-shrink: 0;
-        }
-
-        .feature-icon i {
-            font-size: 1.8rem;
-            color: white;
-        }
-
-        .feature-content h3 {
-            font-size: 1.4rem;
-            margin-bottom: 10px;
-            color: var(--dark-blue);
-        }
-
-        .gallery {
-            background-color: var(--light-gray);
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .gallery-item {
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--box-shadow);
-            height: 250px;
-            position: relative;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-
-        .gallery-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(52, 152, 219, 0.8);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: var(--transition);
-        }
-
-        .gallery-item:hover .gallery-overlay {
-            opacity: 1;
-        }
-
-        .gallery-overlay i {
-            color: white;
-            font-size: 2.5rem;
-        }
-
-        .contact-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
-
-        .contact-info h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            color: var(--dark-blue);
-        }
-
-        .contact-details {
-            margin-bottom: 30px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 20px;
-        }
-
-        .contact-item i {
-            color: var(--primary-blue);
-            font-size: 1.5rem;
-            margin-right: 15px;
-            width: 30px;
-        }
-
-        .contact-text h4 {
-            font-size: 1.2rem;
-            margin-bottom: 5px;
-        }
-
-        .contact-text p {
-            color: var(--text-light);
-        }
-
-        .contact-form .form-group {
-            margin-bottom: 20px;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: var(--border-radius);
-            font-size: 1rem;
-            transition: var(--transition);
-        }
-
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            border-color: var(--primary-blue);
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
-        }
-
-        .contact-form textarea {
-            height: 150px;
-            resize: vertical;
-        }
-
-        footer {
-            background: linear-gradient(to right, var(--dark-blue), var(--dark-green));
-            color: white;
-            padding: 60px 0 30px;
-        }
-
-        .footer-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-col h3 {
-            font-size: 1.5rem;
-            margin-bottom: 25px;
-            position: relative;
-        }
-
-        .footer-col h3::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 50px;
-            height: 2px;
-            background: var(--primary-green);
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 15px;
-        }
-
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .footer-links a:hover {
-            color: white;
-            padding-left: 5px;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: white;
-            transition: var(--transition);
-        }
-
-        .social-links a:hover {
-            background: var(--primary-green);
-            transform: translateY(-5px);
-        }
-
-        .copyright {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.9rem;
-        }
-
-        .newsletter-form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .newsletter-form input {
-            padding: 12px 15px;
-            border: none;
-            border-radius: var(--border-radius);
-            font-size: 1rem;
-        }
-
-        .newsletter-form .btn {
-            width: 100%;
-            text-align: center;
-        }
-
-        @media (max-width: 992px) {
-            .section-title h2 {
-                font-size: 2rem;
-            }
-
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .about-img {
-                order: -1;
-                height: 350px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-menu {
-                position: fixed;
-                top: 80px;
-                left: -100%;
-                background: white;
-                width: 100%;
-                flex-direction: column;
-                align-items: center;
-                padding: 20px 0;
-                box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-                transition: var(--transition);
-            }
-
-            .nav-menu.active {
-                left: 0;
-            }
-
-            .nav-menu li {
-                margin: 15px 0;
-            }
-
-            .cities-list {
-                columns: 1;
-            }
-
-            .hero-btns {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .section-title h2 {
-                font-size: 1.8rem;
-            }
-
-            section {
-                padding: 60px 0;
-            }
-        }
-    </style>
 
     <!-- JavaScript -->
     <script>
@@ -1253,33 +1330,27 @@
             });
         });
 
-        // Lazy Load Images
-        function lazyLoadImages() {
-            const lazyImages = document.querySelectorAll('img[data-src]');
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        img.src = img.dataset.src;
-                        img.removeAttribute('data-src');
-                        observer.unobserve(img);
-                    }
-                });
-            });
-
-            lazyImages.forEach(img => {
-                observer.observe(img);
-            });
-        }
-
         // Form Submission
         function setupForms() {
             const contactForm = document.querySelector('.contact-form form');
             if (contactForm) {
                 contactForm.addEventListener('submit', (e) => {
                     e.preventDefault();
-                    alert('Thank you for your message! We will contact you soon.');
+                    
+                    // Show success message
+                    const successMessage = document.createElement('div');
+                    successMessage.innerHTML = `
+                        <div style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:2000; display:flex; justify-content:center; align-items:center;">
+                            <div style="background:white; padding:40px; border-radius:10px; text-align:center; max-width:500px;">
+                                <i class="fas fa-check-circle" style="font-size:4rem; color:#4CAF50;"></i>
+                                <h2 style="margin:20px 0; color:#333;">Thank You!</h2>
+                                <p style="margin-bottom:30px; font-size:1.1rem;">Your message has been sent successfully. Our team will contact you within 24 hours.</p>
+                                <button class="btn" style="background:var(--primary-orange);" onclick="this.parentElement.parentElement.remove()">Close</button>
+                            </div>
+                        </div>
+                    `;
+                    document.body.appendChild(successMessage);
+                    
                     contactForm.reset();
                 });
             }
@@ -1289,7 +1360,21 @@
                 newsletterForm.addEventListener('submit', (e) => {
                     e.preventDefault();
                     const email = newsletterForm.querySelector('input[type="email"]').value;
-                    alert(`Thank you for subscribing with ${email}! You'll receive our next newsletter soon.`);
+                    
+                    // Show success message
+                    const successMessage = document.createElement('div');
+                    successMessage.innerHTML = `
+                        <div style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:2000; display:flex; justify-content:center; align-items:center;">
+                            <div style="background:white; padding:40px; border-radius:10px; text-align:center; max-width:500px;">
+                                <i class="fas fa-envelope-open-text" style="font-size:4rem; color:var(--primary-orange);"></i>
+                                <h2 style="margin:20px 0; color:#333;">Subscription Confirmed!</h2>
+                                <p style="margin-bottom:30px; font-size:1.1rem;">Thank you for subscribing with ${email}! You'll receive our next newsletter soon.</p>
+                                <button class="btn" style="background:var(--primary-orange);" onclick="this.parentElement.parentElement.remove()">Continue</button>
+                            </div>
+                        </div>
+                    `;
+                    document.body.appendChild(successMessage);
+                    
                     newsletterForm.reset();
                 });
             }
@@ -1297,10 +1382,8 @@
 
         // Initialize when DOM is loaded
         document.addEventListener('DOMContentLoaded', () => {
-            lazyLoadImages();
             setupForms();
         });
     </script>
 </body>
-
 </html>
