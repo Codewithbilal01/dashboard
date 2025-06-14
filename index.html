@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HVAC Duct Cleaning | Professional Services Canada</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>HVAC Specialist Duct Solutions | Professional Services Canada</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --primary-orange: #FF7A00;
             --light-orange: #FFA347;
             --dark-orange: #E06C00;
-            --white: #FFFFFF;
             --light-gray: #F5F5F5;
             --medium-gray: #E0E0E0;
             --dark-gray: #333333;
             --text-color: #444444;
+            --white: #FFFFFF;
+            --off-white: #F9F9F9;
             --transition: all 0.3s ease;
             --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
             --border-radius: 8px;
@@ -25,7 +26,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Montserrat', 'Futura', sans-serif;
         }
 
         body {
@@ -65,32 +66,24 @@
         }
 
         .logo h1 {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--dark-gray);
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
         }
 
         .logo .hvac {
+            font-size: 2.2rem;
+            font-weight: 800;
             color: var(--primary-orange);
-            font-weight: 700;
-            position: relative;
-            margin-right: 8px;
+            letter-spacing: -1px;
         }
 
-        .logo .hvac::after {
-            content: "";
-            position: absolute;
-            right: -8px;
-            top: 0;
-            height: 100%;
-            width: 2px;
-            background-color: var(--dark-gray);
-        }
-
-        .logo .duct-cleaning {
-            color: var(--dark-gray);
+        .logo .tagline {
+            font-size: 0.9rem;
             font-weight: 500;
-            margin-left: 8px;
+            color: var(--dark-gray);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
         }
 
         /* Mobile Menu Toggle */
@@ -106,6 +99,8 @@
         .nav-menu {
             display: flex;
             list-style: none;
+            flex-grow: 1;
+            justify-content: flex-end;
         }
 
         .nav-menu li {
@@ -115,11 +110,12 @@
         .nav-menu a {
             text-decoration: none;
             color: var(--dark-gray);
-            font-weight: 500;
+            font-weight: 600;
             font-size: 1rem;
             transition: var(--transition);
             position: relative;
             padding: 5px 0;
+            letter-spacing: 0.5px;
         }
 
         .nav-menu a:hover {
@@ -143,14 +139,14 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+            background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.9)), 
                         url('https://images.unsplash.com/photo-1601933470096-0e34634ffcde?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=70') 
                         no-repeat center center/cover;
             height: 100vh;
             display: flex;
             align-items: center;
             text-align: center;
-            color: var(--white);
+            color: var(--dark-gray);
             padding-top: 80px;
         }
 
@@ -165,13 +161,17 @@
             font-size: 3.5rem;
             margin-bottom: 20px;
             line-height: 1.2;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--dark-gray);
         }
 
         .hero p {
             font-size: 1.2rem;
             margin-bottom: 30px;
-            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            font-weight: 300;
+            color: var(--text-color);
         }
 
         /* Buttons */
@@ -199,14 +199,14 @@
 
         .btn-outline {
             background: transparent;
-            border: 2px solid var(--white);
-            color: var(--white);
+            border: 2px solid var(--primary-orange);
+            color: var(--primary-orange);
             margin-left: 15px;
         }
 
         .btn-outline:hover {
-            background: var(--white);
-            color: var(--primary-orange);
+            background: var(--primary-orange);
+            color: var(--white);
         }
 
         .hero-btns {
@@ -219,6 +219,7 @@
         /* Section Styling */
         section {
             padding: 100px 0;
+            background-color: var(--white);
         }
 
         .section-title {
@@ -231,6 +232,9 @@
             font-size: 2.5rem;
             color: var(--dark-gray);
             margin-bottom: 15px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .section-title p {
@@ -264,6 +268,7 @@
             font-size: 1.8rem;
             color: var(--dark-gray);
             margin-bottom: 20px;
+            font-weight: 700;
         }
 
         .about-text p {
@@ -277,6 +282,18 @@
             overflow: hidden;
             box-shadow: var(--box-shadow);
             height: 400px;
+            position: relative;
+        }
+
+        .about-img::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 122, 0, 0.05), rgba(255, 122, 0, 0.1));
+            z-index: 1;
         }
 
         .about-img img {
@@ -292,7 +309,7 @@
 
         /* Services Section */
         .services {
-            background-color: var(--light-gray);
+            background-color: var(--off-white);
         }
 
         .services-grid {
@@ -307,6 +324,7 @@
             overflow: hidden;
             box-shadow: var(--box-shadow);
             transition: var(--transition);
+            border-top: 4px solid var(--primary-orange);
         }
 
         .service-card:hover {
@@ -338,6 +356,7 @@
             font-size: 1.5rem;
             margin-bottom: 15px;
             color: var(--dark-gray);
+            font-weight: 600;
         }
 
         .service-content p {
@@ -345,7 +364,11 @@
             margin-bottom: 20px;
         }
 
-        /* Why Choose Us Section - FIXED */
+        /* Why Choose Us Section */
+        .why-us {
+            background-color: var(--off-white);
+        }
+        
         .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -360,14 +383,13 @@
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
             transition: var(--transition);
-            /* Fixed: Prevent content shifting on hover */
             min-height: 190px;
-            border-left: 4px solid transparent;
+            border-left: 4px solid var(--primary-orange);
         }
 
         .feature-card:hover {
             transform: translateY(-5px);
-            border-left: 4px solid var(--primary-orange);
+            border-left: 4px solid var(--dark-orange);
         }
 
         .feature-icon {
@@ -391,19 +413,18 @@
             font-size: 1.4rem;
             margin-bottom: 10px;
             color: var(--dark-gray);
-            /* Fixed: Prevent line breaks */
             word-break: break-word;
             hyphens: auto;
         }
 
         .feature-content p {
-            /* Fixed: Better text wrapping */
             word-break: break-word;
+            color: var(--text-color);
         }
 
         /* Working Areas Section */
         .working-areas {
-            background-color: var(--light-gray);
+            background-color: var(--off-white);
         }
 
         .areas-container {
@@ -428,6 +449,7 @@
 
         .province-header h3 {
             font-size: 1.8rem;
+            font-weight: 600;
         }
 
         .province-content {
@@ -444,6 +466,7 @@
             margin-bottom: 10px;
             padding-left: 20px;
             position: relative;
+            color: var(--text-color);
         }
 
         .cities-list li::before {
@@ -495,7 +518,7 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            background: linear-gradient(to top, rgba(255, 122, 0, 0.8), transparent);
             color: var(--white);
             padding: 15px;
             transform: translateY(100%);
@@ -509,6 +532,7 @@
         .gallery-overlay h4 {
             font-size: 1.2rem;
             margin-bottom: 5px;
+            font-weight: 600;
         }
         
         .gallery-overlay p {
@@ -516,7 +540,7 @@
             opacity: 0.9;
         }
 
-        /* Contact Section - Enhanced & Fixed */
+        /* Contact Section */
         .contact {
             background: url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=70') no-repeat center center/cover;
             position: relative;
@@ -551,7 +575,7 @@
 
         .contact-info {
             padding: 40px;
-            background: linear-gradient(135deg, var(--dark-gray), #222222);
+            background: linear-gradient(135deg, var(--primary-orange), var(--dark-orange));
             color: var(--white);
         }
 
@@ -569,7 +593,7 @@
             left: 0;
             width: 60px;
             height: 3px;
-            background: var(--primary-orange);
+            background: var(--white);
         }
 
         .contact-details {
@@ -585,7 +609,7 @@
         .contact-icon {
             width: 50px;
             height: 50px;
-            background: rgba(255, 122, 0, 0.15);
+            background: rgba(255, 255, 255, 0.15);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -596,7 +620,7 @@
 
         .contact-icon i {
             font-size: 1.3rem;
-            color: var(--primary-orange);
+            color: var(--white);
         }
 
         .contact-text {
@@ -612,7 +636,6 @@
         .contact-text p {
             color: rgba(255, 255, 255, 0.85);
             font-size: 1rem;
-            /* Fixed: Better text wrapping */
             word-break: break-word;
         }
 
@@ -662,7 +685,6 @@
             margin-bottom: 8px;
             font-weight: 500;
             color: var(--dark-gray);
-            /* Fixed: Better text wrapping */
             word-break: break-word;
         }
 
@@ -675,6 +697,7 @@
             border-radius: 5px;
             font-size: 1rem;
             transition: var(--transition);
+            font-family: 'Montserrat', sans-serif;
         }
 
         .form-group input:focus,
@@ -690,9 +713,9 @@
             resize: vertical;
         }
 
-        /* Footer - Enhanced */
+        /* Footer */
         footer {
-            background: linear-gradient(to right, var(--dark-gray), #222222);
+            background: linear-gradient(to right, var(--dark-gray), #222);
             color: var(--white);
             padding: 80px 0 30px;
             position: relative;
@@ -757,7 +780,6 @@
             color: rgba(255, 255, 255, 0.8);
             margin-bottom: 20px;
             line-height: 1.8;
-            /* Fixed: Better text wrapping */
             word-break: break-word;
         }
 
@@ -789,7 +811,6 @@
             color: rgba(255, 255, 255, 0.8);
             margin-bottom: 20px;
             line-height: 1.8;
-            /* Fixed: Better text wrapping */
             word-break: break-word;
         }
 
@@ -804,6 +825,7 @@
             border: none;
             border-radius: 5px;
             font-size: 1rem;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .copyright {
@@ -820,7 +842,7 @@
             position: absolute;
             bottom: 20px;
             right: 20px;
-            background: rgba(255, 122, 0, 0.2);
+            background: rgba(255, 122, 0, 0.5);
             color: var(--white);
             padding: 8px 20px;
             border-radius: 30px;
@@ -850,7 +872,7 @@
             }
         }
 
-        /* Responsive Design - ENHANCED */
+        /* Responsive Design */
         @media (max-width: 992px) {
             .section-title h2 {
                 font-size: 2rem;
@@ -935,12 +957,14 @@
                 margin-top: 15px;
             }
             
-            /* Enhanced: Smaller logo on mobile */
-            .logo h1 {
-                font-size: 1.5rem;
+            .logo .hvac {
+                font-size: 1.8rem;
             }
             
-            /* Enhanced: Fix for contact section on mobile */
+            .logo .tagline {
+                font-size: 0.8rem;
+            }
+            
             .contact-info, .contact-form {
                 padding: 25px;
             }
@@ -954,17 +978,10 @@
                 margin-bottom: 10px;
             }
             
-            /* Enhanced: Better text wrapping for contact info */
-            .contact-text p {
-                line-height: 1.6;
-            }
-            
-            /* Enhanced: Map height adjustment */
             .map-container {
                 height: 180px;
             }
             
-            /* NEW: Newsletter input size on mobile */
             .newsletter-form input {
                 padding: 12px 15px;
                 font-size: 0.95rem;
@@ -980,16 +997,10 @@
                 padding: 80px 0;
             }
             
-            /* Enhanced: Even smaller logo on very small screens */
-            .logo h1 {
-                font-size: 1.3rem;
-            }
-
             .footer-container {
                 grid-template-columns: 1fr;
             }
             
-            /* Enhanced: Feature cards alignment on mobile */
             .feature-card {
                 flex-direction: column;
                 align-items: center;
@@ -1001,19 +1012,16 @@
                 margin-bottom: 15px;
             }
             
-            /* Enhanced: Better text wrapping for Why Choose Us section */
             .feature-content h3 {
                 font-size: 1.3rem;
             }
             
-            /* Enhanced: Form input sizes */
             .form-group input,
             .form-group textarea,
             .form-group select {
                 padding: 12px 15px;
             }
             
-            /* Gallery adjustments for mobile */
             .gallery-container {
                 grid-template-columns: 1fr;
             }
@@ -1029,7 +1037,7 @@
     <header>
         <div class="container header-container">
             <div class="logo">
-                <h1><span class="hvac">HVAC</span><span class="duct-cleaning">Duct Cleaning</span></h1>
+                <h1><span class="hvac">HVAC</span> <span class="tagline">special duct solution</span></h1>
             </div>
             
             <div class="mobile-toggle">
@@ -1051,7 +1059,7 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Professional HVAC Duct Cleaning Services</h1>
+            <h1>Professional Duct Cleaning Services</h1>
             <p>Improve your indoor air quality with our expert duct cleaning services. Serving homes and businesses across Canada with certified technicians and state-of-the-art equipment.</p>
             <div class="hero-btns">
                 <a href="#contact" class="btn">Get a Free Quote</a>
@@ -1065,7 +1073,7 @@
         <div class="container">
             <div class="section-title">
                 <h2>About Our Company</h2>
-                <p>With over 15 years of experience, HVAC Duct Cleaning has been providing top-quality air duct cleaning services across Canada.</p>
+                <p>With over 15 years of experience, HVAC specialist duct solution has been providing top-quality air duct cleaning services across Canada.</p>
             </div>
             <div class="about-grid">
                 <div class="about-text">
@@ -1130,12 +1138,12 @@
         </div>
     </section>
 
-    <!-- Why Choose Us Section - FIXED -->
+    <!-- Why Choose Us Section -->
     <section id="why-us" class="why-us">
         <div class="container">
             <div class="section-title">
                 <h2>Why Choose Us?</h2>
-                <p>Discover why thousands of customers across Canada trust HVAC Duct Cleaning for their air quality needs.</p>
+                <p>Discover why thousands of customers across Canada trust HVAC specialist duct solution for their air quality needs.</p>
             </div>
             <div class="features">
                 <div class="feature-card">
@@ -1355,7 +1363,7 @@
         </div>
     </section>
 
-    <!-- Contact Section - Enhanced & FIXED -->
+    <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-title">
@@ -1372,7 +1380,7 @@
                             </div>
                             <div class="contact-text">
                                 <h4>Our Location</h4>
-                                <p>123 Service Road, Toronto, ON M1A 1A1, Canada</p>
+                                <p>283 Grosvenor Ave N, Hamilton, ON L8L 7T2, Canada</p>
                             </div>
                         </div>
                         <div class="contact-item">
@@ -1381,7 +1389,7 @@
                             </div>
                             <div class="contact-text">
                                 <h4>Call Us</h4>
-                                <p>+1 (888) 555-1234</p>
+                                <p>289 302 9725</p>
                             </div>
                         </div>
                         <div class="contact-item">
@@ -1390,7 +1398,7 @@
                             </div>
                             <div class="contact-text">
                                 <h4>Email Us</h4>
-                                <p>info@hvacductcleaning.ca</p>
+                                <p>Hvacspecialistducts@gmail.com</p>
                             </div>
                         </div>
                         <div class="contact-item">
@@ -1404,7 +1412,7 @@
                         </div>
                     </div>
                     <div class="map-container">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2887.269250541635!2d-79.3892454845025!3d43.64256617912172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b34d68bf33a9b%3A0x15edd8c4de1c7581!2sCN%20Tower!5e0!3m2!1sen!2sca!4v1659548191230!5m2!1sen!2sca" allowfullscreen="" loading="lazy"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2907.257524782464!2d-79.873312!3d43.2359!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882c9b9a5e6b4a5d%3A0x7a1d5c5a5e5e5e5e!2s283%20Grosvenor%20Ave%20N%2C%20Hamilton%2C%20ON%20L8L%207T2!5e0!3m2!1sen!2sca!4v1718347731509!5m2!1sen!2sca" allowfullscreen="" loading="lazy"></iframe>
                     </div>
                 </div>
                 <div class="contact-form">
@@ -1443,13 +1451,13 @@
         </div>
     </section>
 
-    <!-- Footer - Enhanced -->
+    <!-- Footer -->
     <footer>
         <div class="footer-pattern"></div>
         <div class="container">
             <div class="footer-container">
                 <div class="footer-col footer-about">
-                    <h3>HVAC Duct Cleaning</h3>
+                    <h3>HVAC Specialist Duct Solution</h3>
                     <p>Professional duct cleaning services across Canada. Improving indoor air quality for healthier living and working environments since 2008.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -1490,7 +1498,7 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2023 HVAC Duct Cleaning. All Rights Reserved.</p>
+                <p>&copy; 2023 HVAC Specialist Duct Solution. All Rights Reserved.</p>
             </div>
             <div class="footer-badge">
                 <i class="fas fa-shield-alt"></i> NADCA Certified
