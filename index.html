@@ -345,7 +345,7 @@
             margin-bottom: 20px;
         }
 
-        /* Why Choose Us Section */
+        /* Why Choose Us Section - FIXED */
         .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -360,6 +360,9 @@
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
             transition: var(--transition);
+            /* Fixed: Prevent content shifting on hover */
+            min-height: 190px;
+            border-left: 4px solid transparent;
         }
 
         .feature-card:hover {
@@ -388,6 +391,14 @@
             font-size: 1.4rem;
             margin-bottom: 10px;
             color: var(--dark-gray);
+            /* Fixed: Prevent line breaks */
+            word-break: break-word;
+            hyphens: auto;
+        }
+
+        .feature-content p {
+            /* Fixed: Better text wrapping */
+            word-break: break-word;
         }
 
         /* Working Areas Section */
@@ -443,7 +454,7 @@
             font-weight: bold;
         }
 
-        /* Contact Section - Enhanced */
+        /* Contact Section - Enhanced & Fixed */
         .contact {
             background: url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=70') no-repeat center center/cover;
             position: relative;
@@ -539,6 +550,8 @@
         .contact-text p {
             color: rgba(255, 255, 255, 0.85);
             font-size: 1rem;
+            /* Fixed: Better text wrapping */
+            word-break: break-word;
         }
 
         .map-container {
@@ -587,6 +600,8 @@
             margin-bottom: 8px;
             font-weight: 500;
             color: var(--dark-gray);
+            /* Fixed: Better text wrapping */
+            word-break: break-word;
         }
 
         .form-group input,
@@ -680,6 +695,8 @@
             color: rgba(255, 255, 255, 0.8);
             margin-bottom: 20px;
             line-height: 1.8;
+            /* Fixed: Better text wrapping */
+            word-break: break-word;
         }
 
         .social-links {
@@ -710,6 +727,8 @@
             color: rgba(255, 255, 255, 0.8);
             margin-bottom: 20px;
             line-height: 1.8;
+            /* Fixed: Better text wrapping */
+            word-break: break-word;
         }
 
         .newsletter-form {
@@ -769,7 +788,7 @@
             }
         }
 
-        /* Responsive Design */
+        /* Responsive Design - ENHANCED */
         @media (max-width: 992px) {
             .section-title h2 {
                 font-size: 2rem;
@@ -853,6 +872,35 @@
                 margin-left: 0;
                 margin-top: 15px;
             }
+            
+            /* Enhanced: Smaller logo on mobile */
+            .logo h1 {
+                font-size: 1.5rem;
+            }
+            
+            /* Enhanced: Fix for contact section on mobile */
+            .contact-info, .contact-form {
+                padding: 25px;
+            }
+            
+            .contact-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .contact-icon {
+                margin-bottom: 10px;
+            }
+            
+            /* Enhanced: Better text wrapping for contact info */
+            .contact-text p {
+                line-height: 1.6;
+            }
+            
+            /* Enhanced: Map height adjustment */
+            .map-container {
+                height: 180px;
+            }
         }
 
         @media (max-width: 576px) {
@@ -864,12 +912,37 @@
                 padding: 80px 0;
             }
             
+            /* Enhanced: Even smaller logo on very small screens */
             .logo h1 {
-                font-size: 1.5rem;
+                font-size: 1.3rem;
             }
 
             .footer-container {
                 grid-template-columns: 1fr;
+            }
+            
+            /* Enhanced: Feature cards alignment on mobile */
+            .feature-card {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            
+            .feature-icon {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            
+            /* Enhanced: Better text wrapping for Why Choose Us section */
+            .feature-content h3 {
+                font-size: 1.3rem;
+            }
+            
+            /* Enhanced: Form input sizes */
+            .form-group input,
+            .form-group textarea,
+            .form-group select {
+                padding: 12px 15px;
             }
         }
     </style>
@@ -979,7 +1052,7 @@
         </div>
     </section>
 
-    <!-- Why Choose Us Section -->
+    <!-- Why Choose Us Section - FIXED -->
     <section id="why-us" class="why-us">
         <div class="container">
             <div class="section-title">
@@ -1144,7 +1217,7 @@
         </div>
     </section>
 
-    <!-- Contact Section - Enhanced -->
+    <!-- Contact Section - Enhanced & FIXED -->
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-title">
