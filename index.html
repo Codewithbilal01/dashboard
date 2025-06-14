@@ -454,6 +454,68 @@
             font-weight: bold;
         }
 
+        /* Gallery Section */
+        .gallery {
+            background-color: var(--white);
+        }
+        
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            height: 250px;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            color: var(--white);
+            padding: 15px;
+            transform: translateY(100%);
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+        
+        .gallery-overlay h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        
+        .gallery-overlay p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
         /* Contact Section - Enhanced & Fixed */
         .contact {
             background: url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=70') no-repeat center center/cover;
@@ -901,6 +963,12 @@
             .map-container {
                 height: 180px;
             }
+            
+            /* NEW: Newsletter input size on mobile */
+            .newsletter-form input {
+                padding: 12px 15px;
+                font-size: 0.95rem;
+            }
         }
 
         @media (max-width: 576px) {
@@ -944,6 +1012,15 @@
             .form-group select {
                 padding: 12px 15px;
             }
+            
+            /* Gallery adjustments for mobile */
+            .gallery-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-item {
+                height: 220px;
+            }
         }
     </style>
 </head>
@@ -965,6 +1042,7 @@
                 <li><a href="#services">Services</a></li>
                 <li><a href="#why-us">Why Choose Us?</a></li>
                 <li><a href="#working-areas">Working Areas</a></li>
+                <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#contact">Contact Us</a></li>
             </ul>
         </div>
@@ -1217,6 +1295,66 @@
         </div>
     </section>
 
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Work Gallery</h2>
+                <p>Take a look at our professional duct cleaning process and results</p>
+            </div>
+            <div class="gallery-container">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1601933470096-0e34634ffcde?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=70" 
+                         alt="Duct cleaning process">
+                    <div class="gallery-overlay">
+                        <h4>Before Cleaning</h4>
+                        <p>Dust accumulation in ducts</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://img.freepik.com/free-photo/close-up-ventilation-system_23-2149388997.jpg?uid=R199990449&ga=GA1.1.462375219.1739652016&semt=ais_hybrid&w=500" 
+                         alt="Cleaning process">
+                    <div class="gallery-overlay">
+                        <h4>Cleaning Process</h4>
+                        <p>Our technicians at work</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://img.freepik.com/free-photo/hvac-worker-cleaning-air-duct-with-special-equipment_23-2149388971.jpg?uid=R199990449&ga=GA1.1.462375219.1739652016&semt=ais_hybrid&w=500" 
+                         alt="Equipment in use">
+                    <div class="gallery-overlay">
+                        <h4>Professional Equipment</h4>
+                        <p>High-powered vacuum system</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://www.socool.sg/wp-content/uploads/2024/03/air-duct-cleaning-1.jpg" 
+                         alt="After cleaning">
+                    <div class="gallery-overlay">
+                        <h4>After Cleaning</h4>
+                        <p>Spotless duct system</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://img.freepik.com/free-photo/hvac-worker-cleaning-air-duct-with-special-equipment_23-2149388970.jpg?uid=R199990449&ga=GA1.1.462375219.1739652016&semt=ais_hybrid&w=500" 
+                         alt="Detailed cleaning">
+                    <div class="gallery-overlay">
+                        <h4>Detailed Cleaning</h4>
+                        <p>Attention to every vent</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://img.freepik.com/free-photo/close-up-ventilation-system_23-2149388973.jpg?uid=R199990449&ga=GA1.1.462375219.1739652016&semt=ais_hybrid&w=500" 
+                         alt="Commercial project">
+                    <div class="gallery-overlay">
+                        <h4>Commercial Project</h4>
+                        <p>Large-scale duct cleaning</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section - Enhanced & FIXED -->
     <section id="contact" class="contact">
         <div class="container">
@@ -1328,6 +1466,7 @@
                         <li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
                         <li><a href="#why-us"><i class="fas fa-chevron-right"></i> Why Choose Us</a></li>
                         <li><a href="#working-areas"><i class="fas fa-chevron-right"></i> Working Areas</a></li>
+                        <li><a href="#gallery"><i class="fas fa-chevron-right"></i> Gallery</a></li>
                         <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
                     </ul>
                 </div>
@@ -1351,7 +1490,7 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2023 HVAC Duct Cleaning. All Rights Reserved. | Designed with <i class="fas fa-heart" style="color: var(--primary-orange);"></i> for cleaner air</p>
+                <p>&copy; 2023 HVAC Duct Cleaning. All Rights Reserved.</p>
             </div>
             <div class="footer-badge">
                 <i class="fas fa-shield-alt"></i> NADCA Certified
