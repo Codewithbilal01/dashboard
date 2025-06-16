@@ -892,7 +892,8 @@
             }
             
             .tab-btn {
-                width: 80%;
+                width: 100%;
+                max-width: 300px;
                 margin: 5px auto;
             }
             
@@ -942,6 +943,29 @@
                 display: table-cell;
                 width: auto;
             }
+            
+            /* Fix for Saskatchewan and Quebec tables on mobile */
+            #saskatchewan .city-table,
+            #quebec .city-table {
+                min-width: unset;
+                width: 100%;
+                display: block;
+            }
+            
+            #saskatchewan .city-table tr,
+            #quebec .city-table tr {
+                display: flex;
+                flex-wrap: wrap;
+                width: 100%;
+            }
+            
+            #saskatchewan .city-table td,
+            #quebec .city-table td {
+                width: 50%;
+                box-sizing: border-box;
+                padding: 12px;
+                border: none;
+            }
         }
 
         @media (max-width: 576px) {
@@ -979,6 +1003,20 @@
             .email-domain {
                 display: block;
                 margin-top: 4px;
+            }
+            
+            /* Saskatchewan and Quebec mobile view */
+            #saskatchewan .city-table td,
+            #quebec .city-table td {
+                width: 100%;
+                display: block;
+                text-align: center;
+            }
+            
+            #saskatchewan .city-table tr,
+            #quebec .city-table tr {
+                display: block;
+                width: 100%;
             }
         }
     </style>
@@ -1340,26 +1378,6 @@
                             <td>Saskatoon</td>
                             <td>Regina</td>
                         </tr>
-                        <tr>
-                            <td>Prince Albert</td>
-                            <td>Moose Jaw</td>
-                        </tr>
-                        <tr>
-                            <td>Swift Current</td>
-                            <td>Yorkton</td>
-                        </tr>
-                        <tr>
-                            <td>North Battleford</td>
-                            <td>Estevan</td>
-                        </tr>
-                        <tr>
-                            <td>Weyburn</td>
-                            <td>Martensville</td>
-                        </tr>
-                        <tr>
-                            <td>Lloydminster</td>
-                            <td>Warman</td>
-                        </tr>
                     </table>
                 </div>
                 
@@ -1371,27 +1389,7 @@
                         </tr>
                         <tr>
                             <td>Montreal</td>
-                            <td>Quebec City</td>
-                        </tr>
-                        <tr>
-                            <td>Laval</td>
-                            <td>Gatineau</td>
-                        </tr>
-                        <tr>
-                            <td>Longueuil</td>
-                            <td>Sherbrooke</td>
-                        </tr>
-                        <tr>
-                            <td>Saguenay</td>
-                            <td>Lévis</td>
-                        </tr>
-                        <tr>
-                            <td>Trois-Rivières</td>
-                            <td>Terrebonne</td>
-                        </tr>
-                        <tr>
-                            <td>Saint-Jean-sur-Richelieu</td>
-                            <td>Repentigny</td>
+                            <td>Regina</td>
                         </tr>
                     </table>
                 </div>
