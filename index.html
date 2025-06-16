@@ -406,14 +406,15 @@
         .tabs {
             display: flex;
             justify-content: center;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
             flex-wrap: wrap;
+            gap: 10px;
         }
 
         .tab-btn {
             padding: 12px 25px;
             background: var(--white);
-            border: none;
+            border: 2px solid var(--sky-blue);
             border-radius: 30px;
             margin: 5px;
             cursor: pointer;
@@ -426,6 +427,7 @@
         .tab-btn.active, .tab-btn:hover {
             background: var(--deep-blue);
             color: var(--white);
+            border-color: var(--deep-blue);
         }
 
         .tab-content {
@@ -437,35 +439,119 @@
             display: block;
         }
 
-        .city-table {
-            width: 100%;
-            border-collapse: collapse;
-            background: var(--white);
-            border-radius: 10px;
+        /* Province Header */
+        .province-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--sky-blue);
+        }
+
+        .province-header h3 {
+            font-size: 1.8rem;
+            color: var(--deep-blue);
+            margin-bottom: 10px;
+        }
+
+        /* Carousel Container */
+        .carousel-container {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 50px;
+        }
+
+        .carousel {
+            display: flex;
             overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            border-radius: 12px;
+            background: var(--white);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
         }
 
-        .city-table th {
-            background-color: var(--deep-blue);
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+        }
+
+        .carousel-slide {
+            flex: 0 0 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 30px;
+            min-height: 200px;
+        }
+
+        .city-item {
+            background: linear-gradient(135deg, var(--sky-blue) 0%, var(--deep-blue) 100%);
             color: var(--white);
-            padding: 15px;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin: 10px;
             text-align: center;
-            font-size: 1.2rem;
+            font-weight: 600;
+            min-width: 180px;
+            flex: 1;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
         }
 
-        .city-table td {
-            padding: 15px;
-            text-align: center;
-            border-bottom: 1px solid var(--light-grey);
+        .city-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
         }
 
-        .city-table tr:last-child td {
-            border-bottom: none;
+        /* Carousel Navigation */
+        .carousel-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
         }
 
-        .city-table tr:nth-child(even) {
-            background-color: rgba(76, 181, 245, 0.1);
+        .carousel-prev, 
+        .carousel-next {
+            background: var(--deep-blue);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            margin: 0 10px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .carousel-prev:hover, 
+        .carousel-next:hover {
+            background: var(--sky-blue);
+            transform: scale(1.05);
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 25px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--light-grey);
+            margin: 0 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .dot.active {
+            background: var(--deep-blue);
+            transform: scale(1.2);
         }
 
         /* Gallery */
@@ -837,6 +923,18 @@
             .about-content {
                 flex-direction: column;
             }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .carousel-container {
+                padding: 0 30px;
+            }
+            
+            .city-item {
+                min-width: 160px;
+            }
         }
 
         @media (max-width: 768px) {
@@ -902,69 +1000,38 @@
                 flex-direction: column-reverse;
             }
             
-            /* Working areas table mobile */
-            .table-responsive {
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
+            /* Logo size adjustment on mobile */
+            .logo-main {
+                font-size: 1.8rem;
             }
             
-            .city-table {
-                min-width: 600px;
-            }
-
-            /* Why Choose Us - mobile grid */
-            .features-grid {
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            }
-
-            /* Working areas - Saskatchewan & Quebec special styling */
-            #saskatchewan .city-table td,
-            #quebec .city-table td {
-                width: 50%;
-                display: inline-block;
-                text-align: center;
-                border-bottom: none;
-            }
-
-            #saskatchewan .city-table tr,
-            #quebec .city-table tr {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            #saskatchewan .city-table tr:first-child,
-            #quebec .city-table tr:first-child {
-                display: table-row;
-            }
-
-            #saskatchewan .city-table tr:first-child th,
-            #quebec .city-table tr:first-child th {
-                display: table-cell;
-                width: auto;
+            .logo-sub {
+                font-size: 0.9rem;
             }
             
-            /* Fix for Saskatchewan and Quebec tables on mobile */
-            #saskatchewan .city-table,
-            #quebec .city-table {
-                min-width: unset;
-                width: 100%;
-                display: block;
+            .carousel-container {
+                padding: 0 15px;
             }
             
-            #saskatchewan .city-table tr,
-            #quebec .city-table tr {
-                display: flex;
-                flex-wrap: wrap;
-                width: 100%;
+            .carousel-slide {
+                padding: 20px 15px;
             }
             
-            #saskatchewan .city-table td,
-            #quebec .city-table td {
-                width: 50%;
-                box-sizing: border-box;
-                padding: 12px;
-                border: none;
+            .city-item {
+                min-width: 140px;
+                padding: 12px 15px;
+                font-size: 0.9rem;
+            }
+            
+            /* Contact details - single line and smaller font */
+            .contact-detail p {
+                font-size: 0.9rem;
+                line-height: 1.4;
+                word-break: break-word;
+            }
+            
+            .email-domain {
+                display: inline;
             }
         }
 
@@ -986,37 +1053,37 @@
                 font-size: 1.8rem;
             }
             
-            .city-table th, .city-table td {
-                padding: 10px;
-                font-size: 0.9rem;
+            .province-header h3 {
+                font-size: 1.5rem;
             }
             
-            .stats {
-                flex-direction: column;
+            .city-item {
+                min-width: 100%;
+                margin: 8px 0;
             }
             
-            /* Contact email break for mobile */
+            .carousel-prev, 
+            .carousel-next {
+                width: 40px;
+                height: 40px;
+            }
+            
+            /* Contact details - even smaller font */
             .contact-detail p {
-                word-break: break-all;
+                font-size: 0.85rem;
             }
             
             .email-domain {
-                display: block;
-                margin-top: 4px;
+                display: inline;
             }
             
-            /* Saskatchewan and Quebec mobile view */
-            #saskatchewan .city-table td,
-            #quebec .city-table td {
-                width: 100%;
-                display: block;
-                text-align: center;
+            /* Logo size adjustment on very small screens */
+            .logo-main {
+                font-size: 1.6rem;
             }
             
-            #saskatchewan .city-table tr,
-            #quebec .city-table tr {
-                display: block;
-                width: 100%;
+            .logo-sub {
+                font-size: 0.8rem;
             }
         }
     </style>
@@ -1225,7 +1292,7 @@
         </div>
     </section>
 
-    <!-- Working Areas Section -->
+    <!-- Working Areas Section - Redesigned with Slideshow -->
     <section class="working-areas" id="working-areas">
         <div class="container">
             <div class="section-title">
@@ -1239,159 +1306,249 @@
                 <button class="tab-btn" data-tab="quebec">Quebec</button>
             </div>
             
-            <div class="table-responsive">
-                <div class="tab-content active" id="ontario">
-                    <table class="city-table">
-                        <tr>
-                            <th colspan="7">Ontario Working Areas</th>
-                        </tr>
-                        <tr>
-                            <td>Ottawa</td>
-                            <td>Ajax</td>
-                            <td>Whitby</td>
-                            <td>Oshawa</td>
-                            <td>Newcastle</td>
-                            <td>Pickering</td>
-                            <td>Courtice</td>
-                        </tr>
-                        <tr>
-                            <td>Bowmanville</td>
-                            <td>Markham</td>
-                            <td>Richmond Hill</td>
-                            <td>Stouffville</td>
-                            <td>Woodbridge</td>
-                            <td>Maple</td>
-                            <td>Vaughan</td>
-                        </tr>
-                        <tr>
-                            <td>Aurora</td>
-                            <td>Newmarket</td>
-                            <td>Nobleton</td>
-                            <td>Cobourg</td>
-                            <td>Bolton</td>
-                            <td>King City</td>
-                            <td>Bradford</td>
-                        </tr>
-                        <tr>
-                            <td>Kleinburg</td>
-                            <td>Brampton</td>
-                            <td>Mississauga</td>
-                            <td>Scarborough</td>
-                            <td>Oakville</td>
-                            <td>Milton</td>
-                            <td>Burlington</td>
-                        </tr>
-                        <tr>
-                            <td>Hamilton</td>
-                            <td>Niagara Falls</td>
-                            <td>St. Catharines</td>
-                            <td>Windsor</td>
-                            <td>Simcoe</td>
-                            <td>Charlton</td>
-                            <td>London</td>
-                        </tr>
-                        <tr>
-                            <td colspan="7"><strong>Kitchener</strong> | <strong>Cambridge</strong> | <strong>Guelph</strong> | <strong>Waterloo</strong></td>
-                        </tr>
-                    </table>
+            <!-- Ontario Carousel -->
+            <div class="tab-content active" id="ontario">
+                <div class="province-header">
+                    <h3>Ontario Service Areas</h3>
+                    <p>We proudly serve these communities across Ontario</p>
                 </div>
-                
-                <div class="tab-content" id="alberta">
-                    <table class="city-table">
-                        <tr>
-                            <th colspan="7">Alberta Working Areas</th>
-                        </tr>
-                        <tr>
-                            <td>Calgary</td>
-                            <td>Cochrane</td>
-                            <td>Airdrie</td>
-                            <td>Carstairs</td>
-                            <td>Crossfield</td>
-                            <td>Strathmore</td>
-                            <td>Chestermere</td>
-                        </tr>
-                        <tr>
-                            <td>Okotoks</td>
-                            <td>De Winton</td>
-                            <td>High River</td>
-                            <td>Red Deer</td>
-                            <td>Innisfail</td>
-                            <td>Olds</td>
-                            <td>Sylvan Lake</td>
-                        </tr>
-                        <tr>
-                            <td>Brooks</td>
-                            <td>Lacombe</td>
-                            <td>Parkland</td>
-                            <td>Medicine Hat</td>
-                            <td>Rocky View</td>
-                            <td>Drumheller</td>
-                            <td>Edmonton</td>
-                        </tr>
-                        <tr>
-                            <td colspan="2"></td>
-                            <td>St. Albert</td>
-                            <td>Spruce Grove</td>
-                            <td>Leduc</td>
-                            <td>Wetaskiwin</td>
-                            <td>Camrose</td>
-                        </tr>
-                    </table>
+                <div class="carousel-container">
+                    <div class="carousel">
+                        <div class="carousel-inner">
+                            <!-- Slide 1 -->
+                            <div class="carousel-slide">
+                                <div class="city-item">Ottawa</div>
+                                <div class="city-item">Ajax</div>
+                                <div class="city-item">Whitby</div>
+                                <div class="city-item">Oshawa</div>
+                                <div class="city-item">Newcastle</div>
+                            </div>
+                            <!-- Slide 2 -->
+                            <div class="carousel-slide">
+                                <div class="city-item">Pickering</div>
+                                <div class="city-item">Courtice</div>
+                                <div class="city-item">Bowmanville</div>
+                                <div class="city-item">Markham</div>
+                                <div class="city-item">Richmond Hill</div>
+                            </div>
+                            <!-- Slide 3 -->
+                            <div class="carousel-slide">
+                                <div class="city-item">Stouffville</div>
+                                <div class="city-item">Woodbridge</div>
+                                <div class="city-item">Maple</div>
+                                <div class="city-item">Vaughan</div>
+                                <div class="city-item">Aurora</div>
+                            </div>
+                            <!-- Slide 4 -->
+                            <div class="carousel-slide">
+                                <div class="city-item">Newmarket</div>
+                                <div class="city-item">Nobleton</div>
+                                <div class="city-item">Cobourg</div>
+                                <div class="city-item">Bolton</div>
+                                <div class="city-item">King City</div>
+                            </div>
+                            <!-- Slide 5 -->
+                            <div class="carousel-slide">
+                                <div class="city-item">Bradford</div>
+                                <div class="city-item">Kleinburg</div>
+                                <div class="city-item">Brampton</div>
+                                <div class="city-item">Mississauga</div>
+                                <div class="city-item">Scarborough</div>
+                            </div>
+                            <!-- Slide 6 -->
+                            <div class="carousel-slide">
+                                <div class="city-item">Oakville</div>
+                                <div class="city-item">Milton</div>
+                                <div class="city-item">Burlington</div>
+                                <div class="city-item">Hamilton</div>
+                                <div class="city-item">Niagara Falls</div>
+                            </div>
+                            <!-- Slide 7 -->
+                            <div class="carousel-slide">
+                                <div class="city-item">St. Catharines</div>
+                                <div class="city-item">Windsor</div>
+                                <div class="city-item">Simcoe</div>
+                                <div class="city-item">Charlton</div>
+                                <div class="city-item">London</div>
+                            </div>
+                            <!-- Slide 8 -->
+                            <div class="carousel-slide">
+                                <div class="city-item">Kitchener</div>
+                                <div class="city-item">Cambridge</div>
+                                <div class="city-item">Guelph</div>
+                                <div class="city-item">Waterloo</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-nav">
+                        <button class="carousel-prev"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-next"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <div class="carousel-dots">
+                        <!-- Dots will be generated by JavaScript -->
+                    </div>
                 </div>
-                
-                <div class="tab-content" id="bc">
-                    <table class="city-table">
-                        <tr>
-                            <th colspan="7">British Columbia Working Areas</th>
-                        </tr>
-                        <tr>
-                            <td>Surrey</td>
-                            <td>Delta</td>
-                            <td>Langley</td>
-                            <td>Richmond</td>
-                            <td>New Westminster</td>
-                            <td>Burnaby</td>
-                            <td>Vancouver</td>
-                        </tr>
-                        <tr>
-                            <td>Coquitlam</td>
-                            <td>Port Coquitlam</td>
-                            <td>Port Moody</td>
-                            <td>Pitt Meadows</td>
-                            <td>Maple Ridge</td>
-                            <td>Abbotsford</td>
-                            <td>Mission</td>
-                        </tr>
-                        <tr>
-                            <td colspan="7"><strong>Chilliwack</strong></td>
-                        </tr>
-                    </table>
+            </div>
+            
+            <!-- Alberta Carousel -->
+            <div class="tab-content" id="alberta">
+                <div class="province-header">
+                    <h3>Alberta Service Areas</h3>
+                    <p>We proudly serve these communities across Alberta</p>
                 </div>
-                
-                <!-- Saskatchewan with only 2 towns per row on mobile -->
-                <div class="tab-content" id="saskatchewan">
-                    <table class="city-table">
-                        <tr>
-                            <th colspan="2">Saskatchewan Working Areas</th>
-                        </tr>
-                        <tr>
-                            <td>Saskatoon</td>
-                            <td>Regina</td>
-                        </tr>
-                    </table>
+                <div class="carousel-container">
+                    <div class="carousel">
+                        <div class="carousel-inner">
+                            <!-- Slide 1 -->
+                            <div class="carousel-slide">
+                                <div class="city-item">Calgary</div>
+                                <div class="city-item">Cochrane</div>
+                                <div class="city-item">Airdrie</div>
+                                <div class="city-item">Carstairs</div>
+                                <div class="city-item">Crossfield</div>
+                            </div>
+                            <!-- Slide 2 -->
+                            <div class="carousel-slide">
+                                <div class="city-item">Strathmore</div>
+                                <div class="city-item">Chestermere</div>
+                                <div class="city-item">Okotoks</div>
+                                <div class="city-item">De Winton</div>
+                                <div class="city-item">High River</div>
+                            </div>
+                            <!-- Slide 3 -->
+                            <div class="carousel-slide">
+                                <div class="city-item">Red Deer</div>
+                                <div class="city-item">Innisfail</div>
+                                <div class="city-item">Olds</div>
+                                <div class="city-item">Sylvan Lake</div>
+                                <div class="city-item">Brooks</div>
+                            </div>
+                            <!-- Slide 4 -->
+                            <div class="carousel-slide">
+                                <div class="city-item">Lacombe</div>
+                                <div class="city-item">Parkland</div>
+                                <div class="city-item">Medicine Hat</div>
+                                <div class="city-item">Rocky View</div>
+                                <div class="city-item">Drumheller</div>
+                            </div>
+                            <!-- Slide 5 -->
+                            <div class="carousel-slide">
+                                <div class="city-item">Edmonton</div>
+                                <div class="city-item">St. Albert</div>
+                                <div class="city-item">Spruce Grove</div>
+                                <div class="city-item">Leduc</div>
+                                <div class="city-item">Wetaskiwin</div>
+                            </div>
+                            <!-- Slide 6 -->
+                            <div class="carousel-slide">
+                                <div class="city-item">Camrose</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-nav">
+                        <button class="carousel-prev"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-next"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <div class="carousel-dots">
+                        <!-- Dots will be generated by JavaScript -->
+                    </div>
                 </div>
-                
-                <!-- Quebec with only 2 towns per row on mobile -->
-                <div class="tab-content" id="quebec">
-                    <table class="city-table">
-                        <tr>
-                            <th colspan="2">Quebec Working Areas</th>
-                        </tr>
-                        <tr>
-                            <td>Montreal</td>
-                            <td>Regina</td>
-                        </tr>
-                    </table>
+            </div>
+            
+            <!-- British Columbia Carousel -->
+            <div class="tab-content" id="bc">
+                <div class="province-header">
+                    <h3>British Columbia Service Areas</h3>
+                    <p>We proudly serve these communities across British Columbia</p>
+                </div>
+                <div class="carousel-container">
+                    <div class="carousel">
+                        <div class="carousel-inner">
+                            <!-- Slide 1 -->
+                            <div class="carousel-slide">
+                                <div class="city-item">Surrey</div>
+                                <div class="city-item">Delta</div>
+                                <div class="city-item">Langley</div>
+                                <div class="city-item">Richmond</div>
+                                <div class="city-item">New Westminster</div>
+                            </div>
+                            <!-- Slide 2 -->
+                            <div class="carousel-slide">
+                                <div class="city-item">Burnaby</div>
+                                <div class="city-item">Vancouver</div>
+                                <div class="city-item">Coquitlam</div>
+                                <div class="city-item">Port Coquitlam</div>
+                                <div class="city-item">Port Moody</div>
+                            </div>
+                            <!-- Slide 3 -->
+                            <div class="carousel-slide">
+                                <div class="city-item">Pitt Meadows</div>
+                                <div class="city-item">Maple Ridge</div>
+                                <div class="city-item">Abbotsford</div>
+                                <div class="city-item">Mission</div>
+                                <div class="city-item">Chilliwack</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-nav">
+                        <button class="carousel-prev"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-next"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <div class="carousel-dots">
+                        <!-- Dots will be generated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Saskatchewan Carousel -->
+            <div class="tab-content" id="saskatchewan">
+                <div class="province-header">
+                    <h3>Saskatchewan Service Areas</h3>
+                    <p>We proudly serve these communities across Saskatchewan</p>
+                </div>
+                <div class="carousel-container">
+                    <div class="carousel">
+                        <div class="carousel-inner">
+                            <!-- Single Slide -->
+                            <div class="carousel-slide">
+                                <div class="city-item">Saskatoon</div>
+                                <div class="city-item">Regina</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-nav">
+                        <button class="carousel-prev"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-next"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <div class="carousel-dots">
+                        <!-- Dots will be generated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Quebec Carousel -->
+            <div class="tab-content" id="quebec">
+                <div class="province-header">
+                    <h3>Quebec Service Areas</h3>
+                    <p>We proudly serve these communities across Quebec</p>
+                </div>
+                <div class="carousel-container">
+                    <div class="carousel">
+                        <div class="carousel-inner">
+                            <!-- Single Slide -->
+                            <div class="carousel-slide">
+                                <div class="city-item">Montreal</div>
+                                <div class="city-item">Regina</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-nav">
+                        <button class="carousel-prev"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-next"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <div class="carousel-dots">
+                        <!-- Dots will be generated by JavaScript -->
+                    </div>
                 </div>
             </div>
         </div>
@@ -1475,7 +1632,7 @@
                         <i class="fas fa-envelope"></i>
                         <div>
                             <h4>Email</h4>
-                            <p>Hvacspecialistducts@gmail<span class="email-domain">.com</span></p>
+                            <p>Hvacspecialistducts@gmail.com</p>
                         </div>
                     </div>
                     <div class="contact-detail">
@@ -1621,25 +1778,6 @@
             });
         });
         
-        // Working Areas Tabs
-        const tabBtns = document.querySelectorAll('.tab-btn');
-        const tabContents = document.querySelectorAll('.tab-content');
-        
-        tabBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Remove active class from all buttons and contents
-                tabBtns.forEach(b => b.classList.remove('active'));
-                tabContents.forEach(c => c.classList.remove('active'));
-                
-                // Add active class to clicked button
-                btn.classList.add('active');
-                
-                // Show corresponding content
-                const tabId = btn.getAttribute('data-tab');
-                document.getElementById(tabId).classList.add('active');
-            });
-        });
-        
         // Form Submission
         const quoteForm = document.getElementById('quoteForm');
         
@@ -1700,6 +1838,98 @@
             currentTestimonial = (currentTestimonial + 1) % testimonials.length;
             showTestimonial(currentTestimonial);
         }, 5000);
+
+        // Working Areas Tabs
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons and contents
+                tabBtns.forEach(b => b.classList.remove('active'));
+                tabContents.forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                // Show corresponding content
+                const tabId = btn.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+                
+                // Initialize the carousel for the active tab
+                initCarousels();
+            });
+        });
+
+        // Initialize all carousels
+        function initCarousels() {
+            document.querySelectorAll('.carousel-container').forEach(container => {
+                const carousel = container.querySelector('.carousel');
+                const inner = container.querySelector('.carousel-inner');
+                const slides = container.querySelectorAll('.carousel-slide');
+                const prevBtn = container.querySelector('.carousel-prev');
+                const nextBtn = container.querySelector('.carousel-next');
+                const dotsContainer = container.querySelector('.carousel-dots');
+                
+                let currentSlide = 0;
+                const slideCount = slides.length;
+                
+                // Create dots
+                dotsContainer.innerHTML = '';
+                for (let i = 0; i < slideCount; i++) {
+                    const dot = document.createElement('div');
+                    dot.classList.add('dot');
+                    if (i === 0) dot.classList.add('active');
+                    dot.dataset.index = i;
+                    dot.addEventListener('click', () => goToSlide(i));
+                    dotsContainer.appendChild(dot);
+                }
+                
+                // Navigation functions
+                function goToSlide(index) {
+                    if (index < 0) index = slideCount - 1;
+                    if (index >= slideCount) index = 0;
+                    
+                    inner.style.transform = `translateX(-${index * 100}%)`;
+                    currentSlide = index;
+                    
+                    // Update active dot
+                    container.querySelectorAll('.dot').forEach((dot, i) => {
+                        dot.classList.toggle('active', i === currentSlide);
+                    });
+                }
+                
+                function nextSlide() {
+                    goToSlide(currentSlide + 1);
+                }
+                
+                function prevSlide() {
+                    goToSlide(currentSlide - 1);
+                }
+                
+                // Event listeners
+                prevBtn.addEventListener('click', prevSlide);
+                nextBtn.addEventListener('click', nextSlide);
+                
+                // Auto-advance slides
+                let slideInterval = setInterval(nextSlide, 5000);
+                
+                // Pause on hover
+                carousel.addEventListener('mouseenter', () => {
+                    clearInterval(slideInterval);
+                });
+                
+                carousel.addEventListener('mouseleave', () => {
+                    slideInterval = setInterval(nextSlide, 5000);
+                });
+            });
+        }
+        
+        // Initialize everything when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            initCarousels();
+            showTestimonial(currentTestimonial);
+        });
     </script>
 </body>
 </html>
