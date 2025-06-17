@@ -10,16 +10,16 @@
         rel="stylesheet">
     <style>
         :root {
-            --sky-blue: #4CB5F5;
-            --deep-blue: #1A6FB0;
+            --white: #ffffff;
+            --orange: #FF7A00;
+            --orange-dark: #E06A00;
+            --blue: #1A6FB0;
+            --blue-light: #4CB5F5;
             --charcoal: #36454F;
             --light-charcoal: #4A5A65;
-            --white: #ffffff;
             --off-white: #F8F9FA;
             --light-grey: #e9ecef;
-            --accent: #20C997;
-            --accent-dark: #1aa87c;
-            --feature-bg: #f0f8ff;
+            --feature-bg: #FFF8F0;
         }
 
         * {
@@ -88,14 +88,14 @@
         .logo-main {
             font-size: 2.2rem;
             font-weight: 800;
-            color: var(--deep-blue);
+            color: var(--blue);
             line-height: 1;
         }
 
         .logo-sub {
             font-size: 1.1rem;
             font-weight: 600;
-            color: var(--sky-blue);
+            color: var(--orange);
             letter-spacing: 1.5px;
         }
 
@@ -118,7 +118,7 @@
         }
 
         nav ul li a:hover {
-            color: var(--sky-blue);
+            color: var(--orange);
         }
 
         nav ul li a::after {
@@ -128,7 +128,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background-color: var(--sky-blue);
+            background-color: var(--orange);
             transition: width 0.3s;
         }
 
@@ -140,7 +140,7 @@
             display: none;
             font-size: 1.5rem;
             cursor: pointer;
-            color: var(--deep-blue);
+            color: var(--blue);
         }
 
         /* Hero Section */
@@ -181,7 +181,7 @@
 
         .btn {
             display: inline-block;
-            background-color: var(--sky-blue);
+            background-color: var(--orange);
             color: var(--white);
             padding: 15px 35px;
             border-radius: 50px;
@@ -197,9 +197,9 @@
         }
 
         .btn:hover {
-            background-color: var(--deep-blue);
+            background-color: var(--orange-dark);
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(76, 181, 245, 0.4);
+            box-shadow: 0 5px 15px rgba(255, 122, 0, 0.4);
         }
 
         /* Section Styling */
@@ -227,7 +227,7 @@
             transform: translateX(-50%);
             width: 80px;
             height: 4px;
-            background-color: var(--sky-blue);
+            background-color: var(--orange);
         }
 
         /* About Section */
@@ -278,7 +278,7 @@
         .stat-number {
             font-size: 2.5rem;
             font-weight: 700;
-            color: var(--deep-blue);
+            color: var(--orange);
             margin-bottom: 5px;
         }
 
@@ -304,11 +304,11 @@
         }
 
         .service-icon {
-            background-color: var(--light-grey);
+            background-color: #FFF0E0;
             text-align: center;
             padding: 30px 20px;
             font-size: 3rem;
-            color: var(--deep-blue);
+            color: var(--orange);
         }
 
         .service-content {
@@ -324,7 +324,7 @@
         .service-btn {
             display: inline-block;
             margin-top: 15px;
-            color: var(--deep-blue);
+            color: var(--orange);
             font-weight: 600;
             text-decoration: none;
             position: relative;
@@ -362,7 +362,7 @@
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
-            border: 1px solid rgba(76, 181, 245, 0.2);
+            border: 1px solid rgba(255, 122, 0, 0.2);
         }
 
         .feature-box:hover {
@@ -372,20 +372,20 @@
 
         .feature-icon {
             font-size: 2.5rem;
-            color: var(--deep-blue);
+            color: var(--orange);
             margin-bottom: 20px;
             display: inline-block;
             width: 80px;
             height: 80px;
             line-height: 80px;
-            background: linear-gradient(135deg, rgba(76, 181, 245, 0.1) 0%, rgba(26, 111, 176, 0.1) 100%);
+            background: rgba(255, 122, 0, 0.1);
             border-radius: 50%;
             text-align: center;
             transition: all 0.3s;
         }
 
         .feature-box:hover .feature-icon {
-            background: linear-gradient(135deg, var(--sky-blue) 0%, var(--deep-blue) 100%);
+            background: linear-gradient(135deg, var(--orange) 0%, var(--orange-dark) 100%);
             color: white;
             transform: scale(1.1);
         }
@@ -394,7 +394,7 @@
             font-size: 1.5rem;
             font-weight: 700;
             margin-bottom: 12px;
-            color: var(--deep-blue);
+            color: var(--orange);
         }
 
         .feature-subtitle {
@@ -420,7 +420,7 @@
         .tab-btn {
             padding: 12px 25px;
             background: var(--white);
-            border: 2px solid var(--sky-blue);
+            border: 2px solid var(--orange);
             border-radius: 30px;
             margin: 5px;
             cursor: pointer;
@@ -432,9 +432,9 @@
 
         .tab-btn.active,
         .tab-btn:hover {
-            background: var(--deep-blue);
+            background: var(--orange);
             color: var(--white);
-            border-color: var(--deep-blue);
+            border-color: var(--orange);
         }
 
         .tab-content {
@@ -451,12 +451,12 @@
             text-align: center;
             margin-bottom: 30px;
             padding-bottom: 20px;
-            border-bottom: 2px solid var(--sky-blue);
+            border-bottom: 2px solid var(--orange);
         }
 
         .province-header h3 {
             font-size: 1.8rem;
-            color: var(--deep-blue);
+            color: var(--blue);
             margin-bottom: 10px;
         }
 
@@ -492,7 +492,7 @@
         }
 
         .city-item {
-            background: linear-gradient(135deg, var(--sky-blue) 0%, var(--deep-blue) 100%);
+            background: linear-gradient(135deg, var(--orange) 0%, var(--orange-dark) 100%);
             color: var(--white);
             border-radius: 8px;
             padding: 15px 20px;
@@ -519,7 +519,7 @@
 
         .carousel-prev,
         .carousel-next {
-            background: var(--deep-blue);
+            background: var(--blue);
             color: white;
             border: none;
             width: 50px;
@@ -536,7 +536,7 @@
 
         .carousel-prev:hover,
         .carousel-next:hover {
-            background: var(--sky-blue);
+            background: var(--blue-light);
             transform: scale(1.05);
         }
 
@@ -557,7 +557,7 @@
         }
 
         .dot.active {
-            background: var(--deep-blue);
+            background: var(--orange);
             transform: scale(1.2);
         }
 
@@ -593,7 +593,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(26, 111, 176, 0.7);
+            background: rgba(255, 122, 0, 0.7);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -612,7 +612,7 @@
 
         /* Testimonials */
         .testimonials {
-            background: linear-gradient(135deg, var(--deep-blue) 0%, var(--sky-blue) 100%);
+            background: linear-gradient(135deg, var(--blue) 0%, var(--blue-light) 100%);
             color: var(--white);
             position: relative;
             overflow: hidden;
@@ -729,7 +729,7 @@
             left: 0;
             width: 5px;
             height: 100%;
-            background: var(--sky-blue);
+            background: var(--orange);
         }
 
         .contact-info h3 {
@@ -745,7 +745,7 @@
 
         .contact-detail i {
             font-size: 1.5rem;
-            color: var(--sky-blue);
+            color: var(--orange);
             margin-right: 15px;
             min-width: 30px;
         }
@@ -793,8 +793,8 @@
         .form-group textarea:focus,
         .form-group select:focus {
             outline: none;
-            border-color: var(--sky-blue);
-            box-shadow: 0 0 0 3px rgba(76, 181, 245, 0.1);
+            border-color: var(--orange);
+            box-shadow: 0 0 0 3px rgba(255, 122, 0, 0.1);
         }
 
         .form-group textarea {
@@ -818,7 +818,7 @@
 
         /* Footer */
         footer {
-            background-color: var(--charcoal);
+            background-color: var(--blue);
             color: var(--white);
             padding: 60px 0 30px;
         }
@@ -844,7 +844,7 @@
             left: 0;
             width: 50px;
             height: 3px;
-            background-color: var(--sky-blue);
+            background-color: var(--orange);
         }
 
         .footer-column p,
@@ -857,7 +857,7 @@
         }
 
         .footer-column a:hover {
-            color: var(--sky-blue);
+            color: var(--orange);
         }
 
         .social-links {
@@ -878,7 +878,7 @@
         }
 
         .social-links a:hover {
-            background: var(--sky-blue);
+            background: var(--orange);
             transform: translateY(-3px);
         }
 
