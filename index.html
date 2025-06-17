@@ -743,6 +743,10 @@
             min-width: 30px;
         }
 
+        .contact-detail-content {
+            flex: 1;
+        }
+
         .contact-form {
             background: var(--white);
             padding: 40px;
@@ -995,9 +999,21 @@
                 margin: 5px auto;
             }
             
-            /* About section mobile order */
+            /* About section mobile adjustments */
             .about-content {
                 flex-direction: column-reverse;
+            }
+            
+            .about-text p {
+                font-size: 0.95rem;
+            }
+            
+            .stats {
+                flex-direction: column;
+            }
+            
+            .stat-item {
+                margin-bottom: 15px;
             }
             
             /* Logo size adjustment on mobile */
@@ -1023,11 +1039,23 @@
                 font-size: 0.9rem;
             }
             
-            /* Contact details - single line and smaller font */
-            .contact-detail p {
-                font-size: 0.9rem;
-                line-height: 1.4;
-                word-break: break-word;
+            /* Contact details adjustments */
+            .contact-detail {
+                flex-direction: column;
+            }
+            
+            .contact-detail i {
+                margin-bottom: 5px;
+                margin-right: 0;
+            }
+            
+            .contact-detail-content {
+                width: 100%;
+            }
+            
+            .contact-detail-content p {
+                font-size: 0.95rem;
+                line-height: 1.5;
             }
             
             .email-domain {
@@ -1069,8 +1097,8 @@
             }
             
             /* Contact details - even smaller font */
-            .contact-detail p {
-                font-size: 0.85rem;
+            .contact-detail-content p {
+                font-size: 0.9rem;
             }
             
             .email-domain {
@@ -1084,6 +1112,14 @@
             
             .logo-sub {
                 font-size: 0.8rem;
+            }
+            
+            .feature-title {
+                font-size: 1.3rem;
+            }
+            
+            .feature-subtitle {
+                font-size: 1rem;
             }
         }
     </style>
@@ -1538,7 +1574,7 @@
                             <!-- Single Slide -->
                             <div class="carousel-slide">
                                 <div class="city-item">Montreal</div>
-                                <div class="city-item">Regina</div>
+                                <div class="city-item">Quebec City</div>
                             </div>
                         </div>
                     </div>
@@ -1598,13 +1634,13 @@
             <div class="testimonial-container">
                 <div class="testimonial-slide">
                     <div class="client-img">
-                        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Client">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client">
                     </div>
                     <div class="testimonial-text">
                         HVAC Specialist provided exceptional service. The technicians were professional, thorough, and left our home spotless. Our air quality has noticeably improved since the duct cleaning.
                     </div>
                     <div class="client-info">
-                        <h4>Sarah Johnson</h4>
+                        <h4>Mathew Arden</h4>
                         <p>Toronto, ON</p>
                     </div>
                 </div>
@@ -1623,28 +1659,28 @@
                     <h3>Get In Touch</h3>
                     <div class="contact-detail">
                         <i class="fas fa-map-marker-alt"></i>
-                        <div>
+                        <div class="contact-detail-content">
                             <h4>Address</h4>
                             <p>283 Grosvenor Ave N, Hamilton, ON L8L 7T2, Canada</p>
                         </div>
                     </div>
                     <div class="contact-detail">
                         <i class="fas fa-envelope"></i>
-                        <div>
+                        <div class="contact-detail-content">
                             <h4>Email</h4>
                             <p>Hvacspecialistducts@gmail.com</p>
                         </div>
                     </div>
                     <div class="contact-detail">
                         <i class="fas fa-phone-alt"></i>
-                        <div>
+                        <div class="contact-detail-content">
                             <h4>Phone</h4>
                             <p>289 302 9725</p>
                         </div>
                     </div>
                     <div class="contact-detail">
                         <i class="fas fa-clock"></i>
-                        <div>
+                        <div class="contact-detail-content">
                             <h4>Working Hours</h4>
                             <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
                             <p>Saturday: 9:00 AM - 4:00 PM</p>
@@ -1652,7 +1688,7 @@
                     </div>
                     <div class="contact-detail">
                         <i class="fas fa-calendar-check"></i>
-                        <div>
+                        <div class="contact-detail-content">
                             <h4>Appointments</h4>
                             <p>Book online or call for same-day service</p>
                         </div>
@@ -1688,7 +1724,6 @@
                             <select id="property">
                                 <option value="">Select property type</option>
                                 <option value="house">Single Family Home</option>
-                                <option value="apartment">Apartment/Condo</option>
                                 <option value="office">Office Building</option>
                                 <option value="commercial">Commercial Space</option>
                             </select>
@@ -1802,18 +1837,21 @@
         const testimonials = [
             {
                 text: "HVAC Specialist provided exceptional service. The technicians were professional, thorough, and left our home spotless. Our air quality has noticeably improved since the duct cleaning.",
-                name: "Sarah Johnson",
-                location: "Toronto, ON"
+                name: "Mathew Arden",
+                location: "Toronto, ON",
+                image: "men/32"
             },
             {
                 text: "We had our office ducts cleaned and the difference is remarkable. The team was efficient and respectful of our workspace. Highly recommend their services!",
-                name: "Michael Chen",
-                location: "Vancouver, BC"
+                name: "Olivia Charlotte",
+                location: "Calgary, AB",
+                image: "women/45"
             },
             {
                 text: "Prompt, professional, and reasonably priced. They arrived on time, explained everything they were doing, and finished quickly. Great experience overall!",
-                name: "Jennifer Davis",
-                location: "Calgary, AB"
+                name: "Jackson Bryant",
+                location: "Saskatoon, SK",
+                image: "men/22"
             }
         ];
 
@@ -1821,7 +1859,7 @@
             const testimonialContainer = document.querySelector('.testimonial-slide');
             testimonialContainer.innerHTML = `
                 <div class="client-img">
-                    <img src="https://randomuser.me/api/portraits/${index === 0 ? 'women/45' : index === 1 ? 'men/32' : 'women/68'}.jpg" alt="Client">
+                    <img src="https://randomuser.me/api/portraits/${testimonials[index].image}.jpg" alt="Client">
                 </div>
                 <div class="testimonial-text">
                     ${testimonials[index].text}
@@ -1911,7 +1949,7 @@
                 prevBtn.addEventListener('click', prevSlide);
                 nextBtn.addEventListener('click', nextSlide);
                 
-                // Auto-advance slides
+                // Auto-advance slides every 5 seconds
                 let slideInterval = setInterval(nextSlide, 5000);
                 
                 // Pause on hover
